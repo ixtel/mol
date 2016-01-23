@@ -3,6 +3,8 @@
     border-bottom: 1px solid #D9D9D9;
     white-space: nowrap;
     overflow: overlay;
+    padding: .25em;
+    text-align: left;
 }
 
 [mol_stringer]:hover ,

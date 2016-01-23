@@ -6,7 +6,7 @@ class $mol_demo extends $mol.$mol_demo {
         return new $jin2_atom( () => {
             var screens = []
             for( var id in $mol ) {
-                if( /^\$mol_demo_/.test( id ) ) continue
+                if( id === '$mol_demo_screen' ) continue
                 if( !/_demo_/.test( id ) ) continue
                 screens.push( this.screen( id ).get() )
             }

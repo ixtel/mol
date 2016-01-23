@@ -34,6 +34,7 @@ class $mol_block extends $jin2_object {
     attr() {
         var attr = <{ [ index : string ] : $jin2_prop_iface<string> }> {}
         for( var key in this ) {
+            if( typeof this[ key ] !== 'function' ) continue
             if( key.substring( 0 , 5 ) !== 'attr_' ) continue
             attr[ key.substring( 5 ) ] = this[ key ]()
         }
@@ -44,6 +45,7 @@ class $mol_block extends $jin2_object {
     field() {
         var field = <{ [ index : string ] : $jin2_prop_iface<any> }> {}
         for( var key in this ) {
+            if( typeof this[ key ] !== 'function' ) continue
             if( key.substring( 0 , 6 ) !== 'field_' ) continue
             field[ key.substring( 6 ) ] = this[ key ]()
         }
@@ -54,6 +56,7 @@ class $mol_block extends $jin2_object {
     event() {
         var event = <{ [ index : string ] : $jin2_prop_iface<Event> }> {}
         for( var key in this ) {
+            if( typeof this[ key ] !== 'function' ) continue
             if( key.substring( 0 , 6 ) !== 'event_' ) continue
             event[ key.substring( 6 ) ] = this[ key ]()
         }

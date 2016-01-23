@@ -1,2 +1,3 @@
 $mol_clicker : $mol_block
+	field_tabIndex : 0
 	event_click < clicks : null

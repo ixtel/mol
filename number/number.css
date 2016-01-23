@@ -4,6 +4,7 @@
     white-space: nowrap;
     background: none;
     font: inherit;
+    padding: .25em;
 }
 
 [mol_number]:hover ,
