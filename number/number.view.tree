@@ -1,0 +1,7 @@
+$mol_number : $mol_block
+	tagName : =input
+	field_type < type : =number
+	field_value < value : 0
+	attr_placeholder < hint : =hint
+	event_keypress < presses : null
+	event_change < changes : null

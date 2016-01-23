@@ -1,0 +1,16 @@
+[mol_clicker] {
+    cursor: pointer;
+    user-select: none;
+    outline: 1px solid rgba(0,0,0,.1);
+    flex: 0.001 0.001 auto;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 2vmin;
+    display: flex;
+}
+
+[mol_clicker_type="major"] {
+    background: #39807A;
+    color: white;
+}

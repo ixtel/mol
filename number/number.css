@@ -1,0 +1,20 @@
+[mol_number] {
+    border: none;
+    border-bottom: 1px solid #D9D9D9;
+    white-space: nowrap;
+    background: none;
+    font: inherit;
+}
+
+[mol_number]:hover ,
+[mol_number]:focus {
+    border-color: black;
+    outline: none;
+    background: white;
+}
+
+[mol_number]::-webkit-outer-spin-button,
+[mol_number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

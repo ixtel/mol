@@ -1,0 +1,12 @@
+$mol_checker_demo_all : $mol_block
+	title : =I am checkbox
+	checked : true
+	child
+		< one : $mol_checker
+		< two : $mol_checker
+			checked < checked
+		< three : $mol_checker
+			child < title
+		< four : $mol_checker
+			child < title
+			checked < checked

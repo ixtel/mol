@@ -1,0 +1,8 @@
+$mol_scroller : $mol_block
+	attr_mol_scroller_overflowTop < overflowTop : false
+	attr_mol_scroller_overflowBottom < overflowBottom : false
+	attr_mol_scroller_overflowLeft < overflowLeft : false
+	attr_mol_scroller_overflowRight < overflowRight : false
+	event_scroll < scrolls : null
+	field_scrollTop < scrollTop : 0
+	field_scrollLeft < scrollLeft : 0

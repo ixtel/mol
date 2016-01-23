@@ -1,0 +1,3 @@
+$mol_spoiler_demo_generic : $mol_spoiler
+	title : =Show me all!
+	content : $mol_filler

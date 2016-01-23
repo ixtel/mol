@@ -1,0 +1,7 @@
+$mol_stringer : $mol_scroller
+	valueView : =valueView
+	attr_mol_stringer_hint < hint : =hint
+	field_autofocus < autoFocus : false
+	field_contentEditable < editable : true
+	field_textContent < value : =value
+	event_keypress < presses : null

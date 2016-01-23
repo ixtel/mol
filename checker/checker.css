@@ -1,0 +1,18 @@
+[mol_checker] {
+    padding: 1vmin;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    outline: none;
+    display: inline-table;
+    border-spacing: .25em 0;
+}
+
+[mol_checker]:before {
+    display: table-cell;
+	content: '✔';
+}
+
+[mol_checker_checked="false"]:before {
+    opacity: .25;
+}

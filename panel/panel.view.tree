@@ -1,0 +1,4 @@
+$mol_panel : $mol_block child
+	< header : $mol_scroller child < head : null
+	< bodier : $mol_scroller child < body : null
+	< footer : $mol_scroller child < foot : null
