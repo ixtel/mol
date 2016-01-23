@@ -21,4 +21,4 @@ It is new age ui framework. Very simple, but very powerfull.
 
 ## Demo applications
 
- * [$mol_demo](demo) - demonstrates all molecules
+ * [$mol_demo](demo) - demonstrates all molecules ([online](http://nin-jin.github.io/mol/))
