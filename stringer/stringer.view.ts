@@ -5,18 +5,26 @@ class $mol_stringer extends $mol.$mol_stringer {
     presses() {
         return new $jin2_atom( () => null , next => {
             
-            var text = next.target.textContent.trim()
-            
             if( next.keyCode === 13 ) {
-                next.preventDefault()
-                
-                this.value().set( text )
-                text = this.value().get()
-                next.target.textContent = text
+                this.commits().set( next )
             }
             
-            this.valueView().set( text )
+            this.valueView().set( next.target.textContent.trim() )
             
+        } )
+    }
+
+    @ $jin2_grab
+    commits() {
+        return new $jin2_atom( () => null , next => {
+
+            var text = next.target.textContent.trim()
+            next.preventDefault()
+
+            this.value().set( text )
+            text = this.value().get()
+            next.target.textContent = text
+
         } )
     }
 

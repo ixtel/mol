@@ -6,3 +6,4 @@ $mol_stringer : $mol_scroller
 	field_contentEditable < editable : true
 	field_textContent < value : =
 	event_keypress < presses : null
+	commits : null
