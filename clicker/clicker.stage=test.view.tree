@@ -1,2 +1,10 @@
-$mol_clicker_demo_base : $mol_clicker
-	child =I am button!
+$mol_clicker_demo : $mol_block child
+	< one : $mol_clicker
+		child : =Click me!
+		type : =major
+	< two : $mol_clicker
+		child : =Or click me..
+		type : =minor
+	< three : $mol_clicker
+		child : =Be attentive!
+		type : =warn

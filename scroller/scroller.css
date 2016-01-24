@@ -1,5 +1,6 @@
 [mol_scroller] {
     overflow: auto;
+    overflow: overlay;
 }
 
 [mol_scroller]::-webkit-scrollbar {

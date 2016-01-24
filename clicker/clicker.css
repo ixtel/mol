@@ -7,10 +7,15 @@
     align-content: center;
     align-items: center;
     padding: 2vmin;
-    display: flex;
+    display: inline-flex;
+    margin: 1vmin;
 }
 
 [mol_clicker_type="major"] {
     background: #39807A;
     color: white;
+}
+
+[mol_clicker_type="warn"] {
+    background: rgba( 255 , 0 , 0 , .25 );
 }

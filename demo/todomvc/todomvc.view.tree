@@ -28,3 +28,5 @@ $mol_demo_todomvc_task_view_row : $mol_block
 			child < taskTitle : =
 		< dropper : $mol_clicker
 			clicks < taskDrops : null
+
+$mol_demo_todomvc_demo : $mol_demo_todomvc

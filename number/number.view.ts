@@ -17,7 +17,7 @@ class $mol_number extends $mol.$mol_number {
             var field = <HTMLInputElement>event.target
             var val = field.value.trim()
             if( val ) {
-                this.value().set( Number( field.value ) )
+                this.value().set( field.value )
                 field.value = String( this.value().get() )
                 setTimeout( () => field.focus() )
             }

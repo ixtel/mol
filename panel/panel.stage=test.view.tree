@@ -1,19 +1,17 @@
-$mol_panel_demo_light : $mol_panel
-	head : =head
-	body : =body
-	foot : =foot
-
-$mol_panel_demo_generic : $mol_panel
-	head : =head
-	body : $mol_filler
-	foot : =foot
-
-$mol_panel_demo_bloat : $mol_panel
-	head : $mol_filler
-	body : $mol_filler
-	foot : $mol_filler
-
-$mol_panel_demo_footless : $mol_panel
-	head : =head
-	body : $mol_filler
-	foot : null
+$mol_panel_demo : $mol_rower child
+	< light : $mol_panel
+		head : =head
+		body : =body
+		foot : =foot
+	< generic : $mol_panel
+		head : =head
+		body < genericBody : $mol_filler
+		foot : =foot
+	< bloat : $mol_panel
+		head < bloatHead : $mol_filler
+		body < bloatBody : $mol_filler
+		foot < bloatFoot : $mol_filler
+	< footless : $mol_panel
+		head : =head
+		body < footleassBody : $mol_filler
+		foot : null

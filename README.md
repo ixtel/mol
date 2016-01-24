@@ -16,6 +16,7 @@ It is new age ui framework. Very simple, but very powerfull.
 ## Layout molecules
 
  * [$mol_scroller](scroller) - scrolling panel
+ * [$mol_rower](rower) - multiple columns 
  * [$mol_panel](panel) - head-body-foot panel
  * [$mol_spoiler](spoiler) - expandable block
 

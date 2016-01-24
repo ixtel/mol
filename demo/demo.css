@@ -28,8 +28,8 @@
 }
 
 [mol_demo_screen] {
-    width: 400px;
-    height: 200px;
+    width: 560px;
+    height: 360px;
     position: relative;
     margin: 20px;
     background: #ccc;
@@ -47,7 +47,7 @@
     padding: .25em .5em;
     font-size: .8em;
     font-weight: bold;
-    margin-top: 1px;
+    margin: 1px 0 0 0;
     outline: 1px solid steelblue;
 }
 

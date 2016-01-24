@@ -1,13 +1,11 @@
-$mol_scroller_demo_empty : $mol_scroller
-
-$mol_scroller_demo_overflow : $mol_scroller
-	scrollTop : 100
-	child : $mol_filler
-
-$mol_scroller_demo_overflowTop : $mol_scroller
-	scrollTop : 10000
-	child : $mol_filler
-
-$mol_scroller_demo_overflowBottom : $mol_scroller
-	scrollTop : 0
-	child : $mol_filler
+$mol_scroller_demo : $mol_rower child
+	< one : $mol_scroller
+	< two : $mol_scroller
+		scrollTop : 100
+		child < twoFiller : $mol_filler
+	< three : $mol_scroller
+		scrollTop : 10000
+		child < threeFiller : $mol_filler
+	< four : $mol_scroller
+		scrollTop : 0
+		child < fourFiller : $mol_filler

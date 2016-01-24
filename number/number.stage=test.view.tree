@@ -1,10 +1,6 @@
-$mol_number_demo_all : $mol_block
-	value : 123456
-	empty : null
-	hint : =Age
-	child
-		< one : $mol_number
-			value < empty
-			hint < hint
-		< two : $mol_number
-			value < value
+$mol_number_demo : $mol_block child
+	< one : $mol_number
+		hint : =16-99
+	< two : $mol_number
+		hint : =16-99
+		value : =21

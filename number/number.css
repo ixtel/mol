@@ -5,6 +5,8 @@
     background: none;
     font: inherit;
     padding: .25em;
+    display: flex;
+    text-align: right;
 }
 
 [mol_number]:hover ,

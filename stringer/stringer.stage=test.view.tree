@@ -1,12 +1,6 @@
-$mol_stringer_demo_all : $mol_block
-	value : =Hello World
-	empty : =
-	hint : =Greeting
-	child
-		< one : $mol_stringer
-			hint < hint
-			value < empty
-		< two : $mol_stringer value < value
-		< three : $mol_stringer
-			value < empty
-			valueView < value
+$mol_stringer_demo : $mol_block child
+	< one : $mol_stringer
+		hint : =Hello, Wrold!
+	< two : $mol_stringer
+		hint : =Hello, World!
+		value : =Hello, World!

@@ -1,8 +1,8 @@
 $mol_stringer : $mol_scroller
-	valueView : =valueView
+	valueView : =
 	attr_mol_stringer_hint < hint : =hint
 	attr_tabindex : =0
-	field_autofocus < autoFocus : false
+	field_autoFocus < autoFocus : false
 	field_contentEditable < editable : true
-	field_textContent < value : =value
+	field_textContent < value : =
 	event_keypress < presses : null
