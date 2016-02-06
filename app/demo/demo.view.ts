@@ -1,12 +1,12 @@
 @ $mol_replace
-class $mol_demo extends $mol.$mol_demo {
+class $mol_app_demo extends $mol.$mol_app_demo {
     
     @ $jin2_grab
     child() {
         return new $jin2_atom( () => {
             var screens = []
             for( var id in $mol ) {
-                if( id === '$mol_demo' ) continue
+                if( id === '$mol_app_demo' ) continue
                 if( !/_demo$/.test( id ) ) continue
                 screens.push( this.screen( id ).get() )
             }
@@ -17,7 +17,7 @@ class $mol_demo extends $mol.$mol_demo {
     @ $jin2_grab
     screen( id : string ) {
         return new $jin2_atom_own( () => {
-            var view = new $mol_demo_screen
+            var view = new $mol_app_demo_screen
             view.content = () => this.widget( id )
             return view 
         })
@@ -31,7 +31,7 @@ class $mol_demo extends $mol.$mol_demo {
 }
 
 @ $mol_replace
-class $mol_demo_screen extends $mol.$mol_demo_screen {
+class $mol_app_demo_screen extends $mol.$mol_app_demo_screen {
     
     @ $jin2_grab
     title() {

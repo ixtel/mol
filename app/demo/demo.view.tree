@@ -1,7 +1,7 @@
-$mol_demo : $mol_scroller
+$mol_app_demo : $mol_scroller
 
-$mol_demo_screen : $mol_block
-	attr_mol_demo_screen_expanded < expanded : false
+$mol_app_demo_screen : $mol_block
+	attr_mol_app_demo_screen_expanded < expanded : false
 	child
 		< contenter : $mol_scroller
 			child < content : null

@@ -1,4 +1,4 @@
-@keyframes mol_demo_theming
+@keyframes mol_app_demo_theming
 {
     0% { background: #ccc }
     20% { background: #aae }
@@ -7,7 +7,7 @@
     80% { background: #aaa }
 }
 
-[mol_demo] {
+[mol_app_demo] {
     width: 100%;
     height: 100%;
     background-color: steelblue;
@@ -26,7 +26,7 @@
     overflow: auto;
 }
 
-[mol_demo_screen] {
+[mol_app_demo_screen] {
     width: 560px;
     height: 360px;
     position: relative;
@@ -36,11 +36,11 @@
     outline: 1px solid steelblue;
 }
 
-[mol_demo_screen]:hover {
-    animation: mol_demo_theming 30s infinite;
+[mol_app_demo_screen]:hover {
+    animation: mol_app_demo_theming 30s infinite;
 }
 
-[mol_demo_screen_titler] {
+[mol_app_demo_screen_titler] {
     background: inherit;
     color: black;
     padding: .25em .5em;
@@ -50,7 +50,7 @@
     outline: 1px solid steelblue;
 }
 
-[mol_demo_screen_contenter] {
+[mol_app_demo_screen_contenter] {
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -61,7 +61,7 @@
     flex-wrap: wrap;
 }
 
-[mol_demo_screen_expanded="true"] {
+[mol_app_demo_screen_expanded="true"] {
     z-index: 1;
     position: fixed;
     left: 20px;
@@ -73,7 +73,7 @@
     box-shadow: 0 0 100px;
 }
 
-[mol_demo_screen_expanded="true"] [mol_demo_screen_titler] {
+[mol_app_demo_screen_expanded="true"] [mol_app_demo_screen_titler] {
     margin-top: 10px;
     box-shadow: 0 0 20px;
 }
