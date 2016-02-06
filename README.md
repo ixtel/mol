@@ -24,4 +24,4 @@ It is new age ui framework. Very simple, but very powerfull.
 ## Demo applications
 
  * [$mol_app_demo](app/demo) - demonstrates all molecules ([online](http://nin-jin.github.io/mol/))
- * [$mol_app_todomvc](app/todo) - TodoMVC ([benchmark](http://nin-jin.github.io/todomvc/benchmark/))
+ * [$mol_app_todo](app/todo) - TodoMVC ([benchmark](http://nin-jin.github.io/todomvc/benchmark/))
