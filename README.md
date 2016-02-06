@@ -10,6 +10,7 @@ It is new age ui framework. Very simple, but very powerfull.
 
  * [$mol_clicker](clicker) - button
  * [$mol_checker](checker) - checkbox
+ * [$mol_switcher](switcher) - radio button
  * [$mol_stringer](stringer) - one string input
  * [$mol_number](number) - number input
 
