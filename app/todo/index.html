@@ -7,7 +7,7 @@
             body {
                 font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
                 line-height: 1.4em;
-                background: #eaeaea url('./todomvc-bg.png');
+                background: #eaeaea;
                 color: #4d4d4d;
                 margin: 0 auto;
                 -webkit-font-smoothing: antialiased;
@@ -18,7 +18,7 @@
     <body>
         <script src="-mix/index.env=web.stage=test.js" charset="utf-8"></script>
         <script>
-            document.body.appendChild( $mol_demo_todomvc.app().get().node().get() )
+            document.body.appendChild( $mol_app_todo.app().get().node().get() )
             
             var TASK_COUNT = 50
             
@@ -43,7 +43,7 @@
             
             function creates( done ){
                 var i = 0
-                var newTodo = document.querySelector('#new-todo,.new-todo,.todo__new,[mol_demo_todomvc_adder]')
+                var newTodo = document.querySelector('#new-todo,.new-todo,.todo__new,[mol_app_todo_adder]')
                 step()
                 function step( ) {
                     newTodo.textContent = 'Something to do ' + i;
@@ -84,7 +84,7 @@
             function completes(done) {
                 step()
                 function step( ) {
-                    var toggleButton = document.querySelector('.toggle:not(:checked),[mol_demo_todomvc_task_view_row_completer][mol_checker_checked="false"],.sapUiRrRow input[type="CheckBox"]:not(:checked)');
+                    var toggleButton = document.querySelector('.toggle:not(:checked),[mol_app_todo_task_view_row_completer][mol_checker_checked="false"],.sapUiRrRow input[type="CheckBox"]:not(:checked)');
                     
                     if( toggleButton ) {
                         toggleButton.click()
@@ -98,7 +98,7 @@
             function removes(done) {
                 step()
                 function step( ) {
-                    var deleteButton = document.querySelector('.destroy,[mol_demo_todomvc_task_view_row_dropper]');
+                    var deleteButton = document.querySelector('.destroy,[mol_app_todo_task_view_row_dropper]');
                     
                     if( deleteButton ) {
                         deleteButton.click()

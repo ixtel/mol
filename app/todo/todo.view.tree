@@ -1,7 +1,7 @@
-$mol_demo_todomvc : $mol_block child
+$mol_app_todo : $mol_block child
 	< titler : $mol_block
 		child < title =todos
-	< header : $mol_block
+	< header : $mol_rower
 		child < headerContent
 			< allCompleter : $mol_checker
 				checked < allCompleted : false
@@ -12,21 +12,20 @@ $mol_demo_todomvc : $mol_block child
 	< body : $mol_block
 		child < taskRows : null
 	< footer : $mol_block child
-		< pendinger : $mol_block
+		< pendinger : $mol_rower
 			child < pendingMessage
 				< pendingCounter : $mol_block
 					child < pendingCount : 0
-				< pendingTail : =123
+				< pendingTail : =tasks
 
-$mol_demo_todomvc_task_view_row : $mol_block
-	attr_mol_demo_todomvc_task_view_row_completed < taskCompleted
+$mol_app_todo_task_view_row : $mol_rower
+	attr_mol_app_todo_task_view_row_completed < taskCompleted
 	taskCompleted : false
 	child
 		< completer : $mol_checker
 			checked < taskCompleted
-		< title : $mol_block
-			child < taskTitle : =
+		< title : $mol_stringer
+			value < taskTitle : =
 		< dropper : $mol_clicker
+			child : =✖
 			clicks < taskDrops : null
-
-$mol_demo_todomvc_demo : $mol_demo_todomvc

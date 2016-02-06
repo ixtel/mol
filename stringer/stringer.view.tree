@@ -5,5 +5,5 @@ $mol_stringer : $mol_scroller
 	field_autoFocus < autoFocus : false
 	field_contentEditable < editable : true
 	field_textContent < value : =
-	event_keypress < presses : null
+	event_keydown < presses : null
 	commits : null

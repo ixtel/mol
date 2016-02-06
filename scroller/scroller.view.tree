@@ -4,5 +4,7 @@ $mol_scroller : $mol_block
 	attr_mol_scroller_overflowLeft < overflowLeft : false
 	attr_mol_scroller_overflowRight < overflowRight : false
 	event_scroll < scrolls : null
+	event_overflow < scrolls : null
+	event_underflow < scrolls : null
 	field_scrollTop < scrollTop : 0
 	field_scrollLeft < scrollLeft : 0

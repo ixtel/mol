@@ -1,11 +1,11 @@
 // Application component
 @ $mol_replace
-class $mol_demo_todomvc extends $mol.$mol_demo_todomvc {
+class $mol_app_todo extends $mol.$mol_app_todo {
 	
 	@ $jin2_grab
 	tasksAll() {
         var state = $jin2_state_local.item( this.objectPath + '.tasksAll_' )
-        return new $jin2_atom_list<$mol_demo_todomvc_task>(
+        return new $jin2_atom_list<$mol_app_todo_task>(
             () => {
                 var val = state.get()
                 if( !val ) return []
@@ -41,7 +41,7 @@ class $mol_demo_todomvc extends $mol.$mol_demo_todomvc {
     
 	@ $jin2_grab
 	task( id ) { 
-		return new $jin2_atom_own( () => new $mol_demo_todomvc_task )
+		return new $jin2_atom_own( () => new $mol_app_todo_task )
 	}
 
     @ $jin2_grab
@@ -107,7 +107,7 @@ class $mol_demo_todomvc extends $mol.$mol_demo_todomvc {
 
     @$jin2_grab
     taskRow( id ) { return new $jin2_atom_own( () => {
-        var next = new $mol_demo_todomvc_task_view_row
+        var next = new $mol_app_todo_task_view_row
         next.task = () => this.task( id )
         next.taskDrops = () => this.taskDrops( id )
         return next
@@ -133,10 +133,10 @@ class $mol_demo_todomvc extends $mol.$mol_demo_todomvc {
 
 // Task row component
 @ $mol_replace
-class $mol_demo_todomvc_task_view_row extends $mol.$mol_demo_todomvc_task_view_row {
+class $mol_app_todo_task_view_row extends $mol.$mol_app_todo_task_view_row {
 
     @ $jin2_grab
-	task() { return new $jin2_atom<$mol_demo_todomvc_task>() }
+	task() { return new $jin2_atom<$mol_app_todo_task>() }
 
 	taskCompleted() { return this.task().get().completed() }
 

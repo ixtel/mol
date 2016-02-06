@@ -9,6 +9,10 @@ class $mol_stringer extends $mol.$mol_stringer {
                 this.commits().set( next )
             }
             
+            if( next.keyCode === 27 ) {
+                this.reverts().set( next )
+            }
+            
             this.valueView().set( next.target.textContent.trim() )
             
         } )
@@ -17,13 +21,24 @@ class $mol_stringer extends $mol.$mol_stringer {
     @ $jin2_grab
     commits() {
         return new $jin2_atom( () => null , next => {
-
-            var text = next.target.textContent.trim()
             next.preventDefault()
 
+            var text = next.target.textContent.trim()
             this.value().set( text )
-            text = this.value().get()
+			
+			this.reverts().set( next )
+        } )
+    }
+
+    @ $jin2_grab
+    reverts() {
+        return new $jin2_atom( () => null , next => {
+            next.preventDefault()
+
+            var text = this.value().get()
             next.target.textContent = text
+			
+			next.target.blur()
 
         } )
     }

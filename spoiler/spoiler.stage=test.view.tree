@@ -1,3 +1,8 @@
-$mol_spoiler_demo : $mol_spoiler
-	title : =Show me all!
-	content : $mol_filler
+$mol_spoiler_demo : $mol_rower child
+	< one : $mol_scroller child < oneSpoiler : $mol_spoiler
+		title : =Show me all!
+		content < oneFiller : $mol_filler
+	< two : $mol_scroller child < twoSpoiler : $mol_spoiler
+		expanded : true
+		title : =Show me all!
+		content < twoFiller : $mol_filler

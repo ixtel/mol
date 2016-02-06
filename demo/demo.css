@@ -1,11 +1,10 @@
 @keyframes mol_demo_theming
 {
-    0% { background: #999 }
-    20% { background: #99f }
-    40% { background: #9f9 }
-    60% { background: #f99 }
-    80% { background: #666 }
-    100% { background: #999 }
+    0% { background: #ccc }
+    20% { background: #aae }
+    40% { background: #aea }
+    60% { background: #eaa }
+    80% { background: #aaa }
 }
 
 [mol_demo] {
@@ -56,10 +55,10 @@
     height: 100%;
     overflow: auto;
     display: flex;
-    align-items: center;
     align-content: center;
     justify-content: center;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 [mol_demo_screen_expanded="true"] {
@@ -71,7 +70,7 @@
     bottom: 20px;
     width: auto;
     height: auto;
-    box-shadow: 0 0 20px;
+    box-shadow: 0 0 100px;
 }
 
 [mol_demo_screen_expanded="true"] [mol_demo_screen_titler] {

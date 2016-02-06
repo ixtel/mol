@@ -1,5 +1,5 @@
 // Task model
-class $mol_demo_todomvc_task extends $jin2_object {
+class $mol_app_todo_task extends $jin2_object {
 
 	id() {
 		return new $jin2_prop( () => this.objectOwner.objectId )

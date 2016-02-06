@@ -1,19 +1,6 @@
 [mol_number] {
-    border: none;
-    border-bottom: 1px solid #D9D9D9;
-    white-space: nowrap;
-    background: none;
-    font: inherit;
-    padding: .25em;
-    display: flex;
     text-align: right;
-}
-
-[mol_number]:hover ,
-[mol_number]:focus {
-    border-color: black;
-    outline: none;
-    background: white;
+	flex: 1 1 auto;
 }
 
 [mol_number]::-webkit-outer-spin-button,

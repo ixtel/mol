@@ -1,0 +1,10 @@
+$mol_controls_demo : $mol_block child
+	< controlCompleter : $mol_checker
+		child : =Completed
+	< controlTitler : $mol_stringer
+		hint : =Title
+	< controlEstimator : $mol_number
+		hint : =Estimate in hours
+	< controlDropper : $mol_clicker
+		child : =Drop task
+		type : =warn

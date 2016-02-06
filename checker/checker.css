@@ -1,16 +1,12 @@
 [mol_checker] {
-    padding: 1vmin;
     justify-content: center;
     align-items: center;
     align-content: center;
-    outline: none;
-    display: inline-table;
-    border-spacing: .25em 0;
 }
 
 [mol_checker]:before {
-    display: table-cell;
 	content: '✔';
+    padding: 0 .1em;
 }
 
 [mol_checker_checked="false"]:before {

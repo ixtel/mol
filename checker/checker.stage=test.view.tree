@@ -1,8 +1,10 @@
 $mol_checker_demo : $mol_block child
 	< one : $mol_checker
+		checked : false
 	< two : $mol_checker
 		checked : true
 	< three : $mol_checker
+		checked : false
 		child : =Unchecked
 	< four : $mol_checker
 		child : =Checked

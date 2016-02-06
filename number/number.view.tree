@@ -1,7 +1,6 @@
-$mol_number : $mol_block
+$mol_number : $mol_stringer
 	tagName : =input
 	field_type : =number
 	field_value < value : =
 	attr_placeholder < hint : =hint
-	event_keypress < presses : null
 	event_change < changes : null

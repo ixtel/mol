@@ -1,6 +1,6 @@
 $mol_stringer_demo : $mol_block child
 	< one : $mol_stringer
-		hint : =Hello, Wrold!
+		hint : =Greeting
 	< two : $mol_stringer
-		hint : =Hello, World!
+		hint : =Greeting
 		value : =Hello, World!
