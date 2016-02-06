@@ -6,11 +6,7 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	tasksAll() {
         var state = $jin2_state_local.item( this.objectPath + '.tasksAll_' )
         return new $jin2_atom_list<$mol_app_todo_task>(
-            () => {
-                var val = state.get()
-                if( !val ) return []
-                return val.split( ',' ).map( id => this.task( id ).get() )
-            } ,
+            () =>  ( state.get() || [] ).map( id => this.task( id ).get() ) ,
             next => {
                 state.set( next.map( task => task.id().get() ) )
                 return next
@@ -22,11 +18,8 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	tasksSeed() {
         var state = $jin2_state_local.item( this.objectPath + '.tasksSeed_' )
         return new $jin2_atom(
-            () => Number( state.get() ) || 0 ,
-            next => {
-                state.set( next )
-                return next
-            }
+            () => state.get() || 0 ,
+            next => state.set( next )
         )
 	}
 

@@ -1,0 +1,15 @@
+$mol_switcher_demo : $mol_block
+	colorSelected : =blue
+	child
+		< one : $mol_switcher
+			selected < colorSelected
+			value : =red
+			child : =Red
+		< two : $mol_switcher
+			selected < colorSelected
+			value : =green
+			child : =Green
+		< three : $mol_switcher
+			selected < colorSelected
+			value : =blue
+			child : =Blue

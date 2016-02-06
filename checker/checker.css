@@ -6,7 +6,10 @@
 
 [mol_checker]:before {
 	content: '✔';
-    padding: 0 .1em;
+}
+
+[mol_checker]:not(:empty):before {
+    padding-right: .5vmin;
 }
 
 [mol_checker_checked="false"]:before {
