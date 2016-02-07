@@ -1,4 +1,4 @@
-$mol_stringer : $mol_scroller
+$mol_stringer : $mol_block
 	valueView : =
 	attr_mol_stringer_hint < hint : =hint
 	attr_tabindex : =0
@@ -6,4 +6,5 @@ $mol_stringer : $mol_scroller
 	field_contentEditable < editable : true
 	field_textContent < value : =
 	event_keydown < presses : null
+	event_blur < commits : null
 	commits : null

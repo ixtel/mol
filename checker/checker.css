@@ -1,7 +1,7 @@
 [mol_checker] {
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
 }
 
 [mol_checker]:before {
@@ -9,9 +9,9 @@
 }
 
 [mol_checker]:not(:empty):before {
-    padding-right: .5vmin;
+	padding-right: .5vmin;
 }
 
 [mol_checker_checked="false"]:before {
-    opacity: .25;
+	opacity: .25;
 }

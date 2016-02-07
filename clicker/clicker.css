@@ -1,33 +1,33 @@
 [mol_clicker] {
-    cursor: pointer;
-    user-select: none;
-    outline: 1px solid rgba( 0 , 0 , 0 , .1 );
-    flex: 0.001 0.001 auto;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    vertical-align: middle;
-    padding: 1vmin;
-    margin: 0 1px 1px 0;
-    display: inline-flex;
-    background: rgba( 255 , 255 , 255 , .2 );
-    flex: 1 1 auto;
+	cursor: pointer;
+	user-select: none;
+	outline: 1px solid rgba( 0 , 0 , 0 , .1 );
+	flex: 0.001 0.001 auto;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	vertical-align: middle;
+	padding: 1vmin;
+	margin: 0 1px 1px 0;
+	display: inline-flex;
+	background: rgba( 255 , 255 , 255 , .2 );
+	flex: 1 1 auto;
 }
 [mol_clicker]:hover {
-    outline: 1px solid rgba( 0 , 0 , 0 , .2 );
-    /*background: rgba( 255 , 255 , 255 , .3 );*/
+	outline: 1px solid rgba( 0 , 0 , 0 , .2 );
+	/*background: rgba( 255 , 255 , 255 , .3 );*/
 }
 
 [mol_clicker_type="major"] {
-    background: rgba( 0 , 255 , 0 , .2 );
+	background: rgba( 0 , 255 , 0 , .2 );
 }
 [mol_clicker_type="major"]:hover {
-    background: rgba( 0 , 255 , 0 , .3 );
+	background: rgba( 0 , 255 , 0 , .3 );
 }
 
 [mol_clicker_type="warn"] {
-    background: rgba( 255 , 0 , 0 , .2 );
+	background: rgba( 255 , 0 , 0 , .2 );
 }
 [mol_clicker_type="warn"]:hover {
-    background: rgba( 255 , 0 , 0 , .3 );
+	background: rgba( 255 , 0 , 0 , .3 );
 }

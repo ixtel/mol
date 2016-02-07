@@ -1,32 +1,32 @@
 [mol_stringer] {
-    display: inline-block;
-    vertical-align: middle;
-    border: none;
-    outline: 1px solid rgba( 0 , 0 , 0 , .1 );
-    white-space: nowrap;
-    overflow: overlay;
-    padding: 1vmin;
-    text-align: left;
-    position: relative;
-    z-index: 0;
-    background: rgba( 255 , 255 , 255 , .2 );
-    margin: 0 1px 1px 0;
-    font: inherit;
-    flex: 1000 1000 10em;
+	display: inline-block;
+	vertical-align: middle;
+	border: none;
+	outline: 1px solid rgba( 0 , 0 , 0 , .1 );
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 1vmin;
+	text-align: left;
+	position: relative;
+	z-index: 0;
+	background: rgba( 255 , 255 , 255 , .2 );
+	margin: 0 1px 1px 0;
+	font: inherit;
+	flex: 1000 1000 10em;
 	align-self: auto;
 }
 
 [mol_stringer]:hover ,
 [mol_stringer]:focus {
-    outline: 1px solid rgba( 0 , 0 , 0 , .3 );
-    outline-offset: 0;
-    background: rgba( 255 , 255 , 255 , .5 );
+	outline: 1px solid rgba( 0 , 0 , 0 , .3 );
+	outline-offset: 0;
+	background: rgba( 255 , 255 , 255 , .5 );
 }
 
 [mol_stringer]:empty:before {
-    content: attr( mol_stringer_hint );
-    display: inline;
-    color: rgba( 0 , 0 , 0 , .25 );
-    position: relative;
-    z-index: -1;
+	content: attr( mol_stringer_hint );
+	display: inline;
+	color: rgba( 0 , 0 , 0 , .25 );
+	position: relative;
+	z-index: -1;
 }

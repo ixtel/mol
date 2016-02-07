@@ -1,5 +1,13 @@
 [mol_app_todo] {
-	flex: 0 1 24em;	
+	margin: 0;
+	height: 100%;
+	display: flex;
+}
+
+[mol_app_todo_panel] {
+	flex: 0 1 36em;	
+	max-width: 36em;
+	margin: auto;
 }
 
 [mol_app_todo_titler] {

@@ -1,10 +1,10 @@
 [mol_number] {
-    text-align: right;
+	text-align: right;
 	flex: 1 1 auto;
 }
 
 [mol_number]::-webkit-outer-spin-button,
 [mol_number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
