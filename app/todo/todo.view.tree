@@ -1,20 +1,14 @@
 $mol_app_todo : $mol_scroller child
 	< panel : $mol_block child < sections
-		< titler : $mol_block
-			child < title =todos
-		< header : $mol_rower
-			child < headerContent
-				< allCompleter : $mol_checker
-					checked < allCompleted : false
-				< adder : $mol_stringer
-					value < taskNewTitle : =
-					hint < taskNewHint : =What needs to be done?
-					autoFocus < taskNewFocus : true
-		< body : $mol_lister
-			items < taskRows : null
+		< titler : $mol_block child < title =todos
+		< header : $mol_rower child < headerContent
+			< allCompleter : $mol_checker checked < allCompleted : false
+			< adder : $mol_stringer
+				value < taskNewTitle : =
+				hint < taskNewHint : =What needs to be done?
+				autoFocus < taskNewFocus : true
+		< body : $mol_lister items < taskRows : null
 		< footer : $mol_block child
-			< pendinger : $mol_rower
-				child < pendingMessage
-					< pendingCounter : $mol_block
-						child < pendingCount : 0
-					< pendingTail : =tasks
+			< pendinger : $mol_rower child < pendingMessage
+				< pendingCounter : $mol_block child < pendingCount : 0
+				< pendingTail : =tasks

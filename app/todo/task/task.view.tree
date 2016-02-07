@@ -2,8 +2,7 @@ $mol_app_todo_task_view_row : $mol_rower
 	attr_mol_app_todo_task_view_row_completed < taskCompleted
 	taskCompleted : false
 	child
-		< completer : $mol_checker
-			checked < taskCompleted
+		< completer : $mol_checker checked < taskCompleted
 		< title : $mol_stringer
 			hint : =Task title
 			value < taskTitle : =
