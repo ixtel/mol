@@ -10,7 +10,7 @@
 			body {
 				height: 100%;
 				margin: 0;
-				font: 14px/1.2 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font: 18px/1.2 'Helvetica Neue', Helvetica, Arial, sans-serif;
 				background: #eaeaea;
 				color: #4d4d4d;
 			}
@@ -85,7 +85,7 @@
 			function completes(done) {
 				step()
 				function step( ) {
-					var toggleButton = document.querySelector('.toggle:not(:checked),[mol_app_todo_task_view_row_completer][mol_checker_checked="false"],.sapUiRrRow input[type="CheckBox"]:not(:checked)');
+					var toggleButton = document.querySelector('.toggle:not(:checked),[mol_app_todo_allcompleter][mol_checker_checked="false"],.sapUiRrRow input[type="CheckBox"]:not(:checked)');
 					
 					if( toggleButton ) {
 						toggleButton.click()

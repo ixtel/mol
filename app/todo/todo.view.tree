@@ -10,8 +10,8 @@ $mol_app_todo : $mol_scroller child
 					value < taskNewTitle : =
 					hint < taskNewHint : =What needs to be done?
 					autoFocus < taskNewFocus : true
-		< body : $mol_block
-			child < taskRows : null
+		< body : $mol_lister
+			items < taskRows : null
 		< footer : $mol_block child
 			< pendinger : $mol_rower
 				child < pendingMessage
