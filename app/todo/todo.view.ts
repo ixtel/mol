@@ -9,17 +9,7 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 			() =>  ( state.get() || [] ).map( id => this.task( id ).get() ) ,
 			next => {
 				state.set( next.map( task => task.id().get() ) )
-				return next
 			}
-		)
-	}
-
-	@ $jin2_grab
-	tasksSeed() {
-		var state = $jin2_state_local.item( this.objectPath + '.tasksSeed_' )
-		return new $jin2_atom(
-			() => state.get() || 0 ,
-			next => state.set( next )
 		)
 	}
 
@@ -27,8 +17,16 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	tasks() {
 		return new $jin2_atom( () => {
 			var completed = $jin2_state_arg.item( 'completed' ).get()
-			if( !completed || !completed.length ) return this.tasksAll().get()
-			return this.groupsByCompleted().get()[ completed[0] ] || []
+			if( !completed || !completed.length ) {
+				var tasks = this.tasksAll().get()
+			} else {
+				var tasks = this.groupsByCompleted().get()[ completed[0] ] || []
+			}
+			
+			var query = this.searchQuery().get() 
+			if( query ) tasks = tasks.filter( task => !!task.title().get().match( query ) )
+			
+			return tasks
 		} )
 	}
 	
@@ -48,7 +46,7 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	@ $jin2_grab
 	groupsByCompleted() {
 		return new $jin2_atom( () => {
-			var groups = { 'true' : [] , 'false' : [] }
+			var groups = <{ [ index : string ] : $mol_app_todo_task[] }> { 'true' : [] , 'false' : [] }
 			this.tasksAll().get().forEach( task => {
 				groups[ task.completed().get() + '' ].push( task )
 			} )
@@ -70,11 +68,9 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	taskNewTitle() {
 		return new $jin2_atom( () => '' , next => {
 			if( next ) {
-				var id = this.tasksSeed().get()
-				this.tasksSeed().set( id + 1 )
-				var task = this.task( id ).get()
-				task.title().set( next )
 				var tasks = this.tasksAll().get()
+				var task = this.task( tasks.length ? tasks[ tasks.length - 1 ].id().get() + 1 : 1 ).get()
+				task.title().set( next )
 				tasks = tasks.concat( task )
 				this.tasksAll().set( tasks )
 			}
@@ -83,17 +79,9 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	}
 
 	@ $jin2_grab
-	taskRowsAll() {
-		return new $jin2_atom(
-			() => this.tasks().get().map( task => this.taskRow( task.id().get() ).get() ) ,
-			next => null
-		)
-	}
-
-	@ $jin2_grab
 	taskRows() {
 		return new $jin2_atom(
-			() => this.taskRowsAll().get(),//.slice( 0 , 20 ) ,
+			() => this.tasks().get().map( task => this.taskRow( task.id().get() ).get() ) ,
 			next => null
 		)
 	}
@@ -116,7 +104,7 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 			if( index >= 0 ) {
 				tasks = tasks.slice( 0 , index ).concat( tasks.slice( index + 1 ) )
 				this.tasksAll().set( tasks )
-				task.data().set({ title : void 0 , completed : void 0 })
+				task.data().set(void 0)
 				//next.destroy()
 			}
 		}

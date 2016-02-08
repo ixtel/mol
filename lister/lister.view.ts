@@ -11,6 +11,7 @@ class $mol_lister extends $mol.$mol_lister {
 	@ $jin2_grab
 	itemsVisible() { return new $jin2_atom( () => {
 		var items = this.items().get()
+		if( !items ) return items
 		
 		var scroller = this.scroller().get()
 		if( !scroller ) return items

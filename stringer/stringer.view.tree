@@ -1,10 +1,10 @@
 $mol_stringer : $mol_block
-	valueView : =
+	valueChanged : =
 	attr_mol_stringer_hint < hint : =hint
 	attr_tabindex : =0
 	field_autoFocus < autoFocus : false
 	field_contentEditable < editable : true
 	field_textContent < value : =
 	event_keydown < presses : null
-	event_blur < commits : null
-	commits : null
+	event_input < changes : null
+	event_blur < blurs : null

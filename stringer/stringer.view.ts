@@ -5,28 +5,33 @@ class $mol_stringer extends $mol.$mol_stringer {
 	presses() {
 		return new $jin2_atom( () => null , next => {
 			
-			if( next.keyCode === 13 ) {
-				this.commits().set( next )
-				next.target.blur()
+			switch( next.keyCode ) {
+				case 13 :
+					this.commits().set( next )
+					break
+				case 27 :
+					this.reverts().set( next )
+					next.target.blur()
+					break
+				default : return
 			}
 			
-			if( next.keyCode === 27 ) {
-				this.reverts().set( next )
-				next.target.blur()
-			}
+			next.preventDefault()
 			
-			this.valueView().set( next.target.textContent.trim() )
-			
+		} )
+	}
+
+	@ $jin2_grab
+	changes() {
+		return new $jin2_atom( () => null , next => {
+			this.valueChanged().set( next.target.textContent.trim() )
 		} )
 	}
 
 	@ $jin2_grab
 	commits() {
 		return new $jin2_atom( () => null , next => {
-			next.preventDefault()
-
 			this.value().set( next.target.textContent.trim() )
-			
 			this.reverts().set( next )
 		} )
 	}
@@ -34,9 +39,8 @@ class $mol_stringer extends $mol.$mol_stringer {
 	@ $jin2_grab
 	reverts() {
 		return new $jin2_atom( () => null , next => {
-			next.preventDefault()
-
 			next.target.textContent = this.value().get()
+			this.changes().set( next )
 		} )
 	}
 

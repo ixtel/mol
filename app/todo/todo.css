@@ -7,7 +7,7 @@
 [mol_app_todo_panel] {
 	flex: 0 1 32em;	
 	max-width: 32em;
-	margin: auto;
+	margin: 10% auto;
 }
 
 [mol_app_todo_titler] {
@@ -23,6 +23,17 @@
 [mol_app_todo_task_view_row_completed="true"] [mol_app_todo_task_view_row_title] {
 	color: #a9a9a9;
 	text-decoration: line-through;
+}
+
+[mol_app_todo_footer] {
+	color: #777;
+	padding: .25em .5em;
+	font-size: .8em;
+}
+
+[mol_app_todo_pendingCounter] {
+	margin: 0 .2em;
+	font-weight: bold;
 }
 
 /*
