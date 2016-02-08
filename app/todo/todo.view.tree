@@ -9,7 +9,10 @@ $mol_app_todo : $mol_scroller child
 				hint < taskNewHint : =What needs to be done?
 				autoFocus < taskNewFocus : true
 		< body : $mol_lister items < taskRows : null
-		< footer : $mol_block child
-			< pendinger : $mol_rower child < pendingMessage
+		< footer : $mol_rower child < footerContent
+			< pendinger : $mol_block child < pendingMessage
 				< pendingCounter : $mol_block child < pendingCount : 0
 				< pendingTail : = items left
+			< sanitizer : $mol_clicker
+				clicks < sanitizes : null
+				child < sanitizerMessage : =Clear completed

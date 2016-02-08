@@ -60,6 +60,11 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	}
 
 	@ $jin2_grab
+	completedCount() {
+		return new $jin2_atom( () => this.groupsByCompleted().get()[ 'true' ].length )
+	}
+
+	@ $jin2_grab
 	pendingTail() {
 		return new $jin2_atom( () => ( this.pendingCount().get() === 1 ? ' item left' : ' items left' ) )
 	}
@@ -109,6 +114,28 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 			}
 		}
 	) }
+
+	@$jin2_grab
+	sanitizes() { return new $jin2_atom(
+		() => null,
+		next => {
+			var tasks = this.tasksAll().get()
+			
+			tasks = tasks.filter( task => {
+				if( !task.completed().get() ) return true
+				
+				task.data().set(void 0)
+				return false
+			} )
+			
+			this.tasksAll().set( tasks )
+		}
+	) }
+
+	@ $jin2_grab
+	sanitizerMessage() {
+		return new $jin2_atom( () => 'Clear completed (' + this.completedCount().get() + ')' )
+	}
 
 }
 

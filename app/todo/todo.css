@@ -31,13 +31,21 @@
 
 [mol_app_todo_footer] {
 	color: #777;
-	padding: .25em .5em;
 	font-size: .8em;
+}
+
+[mol_app_todo_pendinger] {
+	padding: .25em .5em;
 }
 
 [mol_app_todo_pendingCounter] {
 	margin: 0 .2em;
 	font-weight: bold;
+	display: inline;
+}
+
+[mol_app_todo_sanitizer] {
+	flex: 0 1 auto;
 }
 
 /*
