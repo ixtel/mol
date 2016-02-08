@@ -25,6 +25,10 @@
 	text-decoration: line-through;
 }
 
+[mol_app_todo_task_view_row]:not(:hover) [mol_app_todo_task_view_row_dropper] {
+	display: none;
+}
+
 [mol_app_todo_footer] {
 	color: #777;
 	padding: .25em .5em;
