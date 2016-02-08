@@ -136,7 +136,17 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	sanitizerMessage() {
 		return new $jin2_atom( () => 'Clear completed (' + this.completedCount().get() + ')' )
 	}
-
+	
+	@ $jin2_grab
+	footerContent() {
+		return new $jin2_atom( () => {
+			return [
+				this.pendingCount().get() ? this.pendinger().get() : null ,
+				this.completedCount().get() ? this.sanitizer().get() : null ,
+			]
+		} )
+	}
+	
 }
 
 // Task row component
