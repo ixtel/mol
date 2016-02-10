@@ -1,0 +1,24 @@
+$mol_grid_demo : $mol_grid
+	header : $mol_grid_demo_header
+
+$mol_grid_demo_header : $mol_grid_row cells
+	< cellId : $mol_number
+		editable : false
+		value : =ID
+	< cellFlag : $mol_stringer
+		editable : false
+		value : =Active
+	< cellNumber : $mol_number
+		editable : false
+		value : =Age
+	< cellString : $mol_stringer
+		editable : false
+		value : =Title
+
+$mol_grid_demo_row : $mol_grid_row cells
+	< cellId : $mol_number
+		editable : false
+		value < id : =
+	< cellFlag : $mol_checker
+	< cellNumber : $mol_number value : =12345
+	< cellString : $mol_stringer value < stringContent : =Hello, World!
