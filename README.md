@@ -19,6 +19,7 @@ It is new age ui framework. Very simple, but very powerfull.
  * [$mol_scroller](scroller) - scrolling panel
  * [$mol_rower](rower) - multiple columns 
  * [$mol_lister](lister) - list of rows with lazy rendering 
+ * [$mol_grid](grid) - table with lazy rendering 
  * [$mol_panel](panel) - head-body-foot panel
  * [$mol_spoiler](spoiler) - expandable block
 
