@@ -1,6 +1,8 @@
 # $mol(ecule)
 It is new age ui framework. Very simple, but very powerfull.
 
+* [Quick start with PMS architecture](https://github.com/nin-jin/pms-stub)
+
 ## Basic molecules
 
  * [$mol_block](block) - abstract block 
