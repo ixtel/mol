@@ -1,5 +1,5 @@
 @ $mol_replace
-class $mol_grid_demo extends $mol.$mol_grid_demo {
+class $mol_tabler_demo extends $mol.$mol_tabler_demo {
 	
 	@ $jin2_grab
 	rows() { return new $jin2_atom( () => {
@@ -13,14 +13,14 @@ class $mol_grid_demo extends $mol.$mol_grid_demo {
 
 	@ $jin2_grab
 	row( id : number ) { return new $jin2_atom_own( () => {
-		var view = new $mol_grid_demo_row
+		var view = new $mol_tabler_demo_row
 		return view
 	} ) }
 	
 }
 
 @ $mol_replace
-class $mol_grid_demo_row extends $mol.$mol_grid_demo_row {
+class $mol_tabler_demo_row extends $mol.$mol_tabler_demo_row {
 	
 	@ $jin2_grab
 	id() { return new $jin2_atom( () => this.objectOwner.objectId ) }

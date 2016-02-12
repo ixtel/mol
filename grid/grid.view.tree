@@ -1,7 +1,0 @@
-$mol_grid : $mol_scroller child : $mol_grid_table rows < rows : null
-
-$mol_grid_table : $mol_lister items < rows : null
-
-$mol_grid_row : $mol_block child < cells : null
-
-$mol_grid_cell : $mol_block

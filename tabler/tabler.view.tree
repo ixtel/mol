@@ -1,0 +1,1 @@
+$mol_tabler : $mol_scroller child < lister : $mol_lister items < rows : null

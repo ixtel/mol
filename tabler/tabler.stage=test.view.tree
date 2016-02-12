@@ -1,7 +1,7 @@
-$mol_grid_demo : $mol_grid
-	header : $mol_grid_demo_header
+$mol_tabler_demo : $mol_tabler
+	header : $mol_tabler_demo_header
 
-$mol_grid_demo_header : $mol_grid_row cells
+$mol_tabler_demo_header : $mol_block child
 	< cellId : $mol_number
 		editable : false
 		value : =ID
@@ -15,7 +15,7 @@ $mol_grid_demo_header : $mol_grid_row cells
 		editable : false
 		value : =Title
 
-$mol_grid_demo_row : $mol_grid_row cells
+$mol_tabler_demo_row : $mol_block child
 	< cellId : $mol_number
 		editable : false
 		value < id : =

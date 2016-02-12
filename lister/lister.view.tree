@@ -1,5 +1,5 @@
 $mol_lister : $mol_block
-	rowMinHeight : 32
+	rowMinHeight : 20
 	child < itemsVisible < items : null
 	filler : $mol_lister_filler
 
