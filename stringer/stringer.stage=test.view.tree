@@ -1,4 +1,4 @@
-$mol_stringer_demo : $mol_block child
+$mol_stringer_demo : $mol_rower child
 	< one : $mol_stringer
 		hint : =Greeting
 	< two : $mol_stringer

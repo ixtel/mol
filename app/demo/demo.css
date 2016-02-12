@@ -46,8 +46,9 @@
 	padding: .25em .5em;
 	font-size: .8em;
 	font-weight: bold;
-	margin: 1px 0 0 0;
+	margin: -1.75em 0 0 0;
 	outline: 1px solid steelblue;
+	position: absolute;
 }
 
 [mol_app_demo_screen_contenter] {
@@ -74,6 +75,6 @@
 }
 
 [mol_app_demo_screen_expanded="true"] [mol_app_demo_screen_titler] {
-	margin-top: 10px;
+	margin-top: -2.25em;
 	box-shadow: 0 0 20px;
 }

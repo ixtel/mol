@@ -1,4 +1,4 @@
-$mol_clicker_demo : $mol_block child
+$mol_clicker_demo : $mol_rower child
 	< one : $mol_clicker
 		child : =Click me!
 		type : =major

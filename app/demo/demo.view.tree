@@ -3,8 +3,8 @@ $mol_app_demo : $mol_scroller
 $mol_app_demo_screen : $mol_block
 	attr_mol_app_demo_screen_expanded < expanded : false
 	child
-		< contenter : $mol_scroller
-			child < content : null
 		< titler : $mol_checker
 			child < title : =
 			checked < expanded : false
+		< contenter : $mol_scroller
+			child < content : null

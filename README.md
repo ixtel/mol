@@ -22,6 +22,7 @@ It is new age ui framework. Very simple, but very powerfull.
  * [$mol_rower](rower) - multiple columns 
  * [$mol_lister](lister) - list of rows with lazy rendering 
  * [$mol_tabler](tabler) - grid with lazy rendering 
+ * [$mol_floater](floater) - float block 
  * [$mol_panel](panel) - head-body-foot panel
  * [$mol_spoiler](spoiler) - expandable block
 

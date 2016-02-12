@@ -1,4 +1,4 @@
-$mol_number_demo : $mol_block child
+$mol_number_demo : $mol_rower child
 	< one : $mol_number
 		hint : =16-99
 	< two : $mol_number

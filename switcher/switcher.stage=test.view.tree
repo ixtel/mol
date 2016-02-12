@@ -1,4 +1,4 @@
-$mol_switcher_demo : $mol_block
+$mol_switcher_demo : $mol_rower
 	colorSelected : =blue
 	child
 		< one : $mol_switcher

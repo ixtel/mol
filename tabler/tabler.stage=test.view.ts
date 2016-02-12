@@ -5,7 +5,7 @@ class $mol_tabler_demo extends $mol.$mol_tabler_demo {
 	rows() { return new $jin2_atom( () => {
 		var rows = []
 		rows.push( this.header().get() )
-		for( var i = 0 ; i < 1000 ; ++i ) {
+		for( var i = 0 ; i < 200 ; ++i ) {
 			rows.push( this.row( i ).get() )
 		}
 		return rows

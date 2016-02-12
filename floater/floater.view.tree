@@ -1,0 +1,4 @@
+$mol_floater : $mol_block
+	field_style_transform < transform : =none
+	attr_mol_floater_floatingHor < floatingHor < floatHor : true
+	attr_mol_floater_floatingVert < floatingVert < floatVert : true

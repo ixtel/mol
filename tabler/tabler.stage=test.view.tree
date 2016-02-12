@@ -2,23 +2,38 @@ $mol_tabler_demo : $mol_tabler
 	header : $mol_tabler_demo_header
 
 $mol_tabler_demo_header : $mol_block child
-	< cellId : $mol_number
-		editable : false
-		value : =ID
-	< cellFlag : $mol_stringer
-		editable : false
-		value : =Active
-	< cellNumber : $mol_number
-		editable : false
-		value : =Age
-	< cellString : $mol_stringer
-		editable : false
-		value : =Title
+	< cellId : $mol_floater
+		child < cellIdContent : $mol_number
+			editable : false
+			value : =ID
+	< cellFlag : $mol_floater
+		floatHor : false
+		child < cellFlagContent : $mol_stringer
+			editable : false
+			value : =Active
+	< cellNumber : $mol_floater
+		floatHor : false
+		child < cellNumberContent : $mol_number
+			editable : false
+			value : =Age
+	< cellString : $mol_floater
+		floatHor : false
+		child < cellStringContent : $mol_stringer
+			editable : false
+			value : =Title
+	< cellActions : $mol_floater
+		floatHor : false
+		child < cellActionsContent : $mol_stringer
+			editable : false
+			value : =Actions
 
 $mol_tabler_demo_row : $mol_block child
-	< cellId : $mol_number
-		editable : false
-		value < id : =
+	< cellId : $mol_floater
+		floatVert : false
+		child < cellIdContent : $mol_number
+			editable : false
+			value < id : =
 	< cellFlag : $mol_checker
 	< cellNumber : $mol_number value : =12345
 	< cellString : $mol_stringer value < stringContent : =Hello, World!
+	< cellButton : $mol_clicker child : =Open

@@ -1,5 +1,6 @@
 [mol_number] {
 	text-align: right;
+	justify-content: flex-end;
 	/*flex: 1 1 auto;*/
 }
 

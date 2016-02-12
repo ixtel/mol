@@ -1,4 +1,4 @@
-$mol_checker_demo : $mol_block child
+$mol_checker_demo : $mol_rower child
 	< one : $mol_checker
 		checked : false
 	< two : $mol_checker
