@@ -32,7 +32,7 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	
 	@ $jin2_grab
 	task( id ) { 
-		return new $jin2_atom_own( () => new $mol_app_todo_task )
+		return new $mol_app_todo_task
 	}
 
 	@ $jin2_grab
@@ -92,12 +92,12 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	}
 
 	@$jin2_grab
-	taskRow( id ) { return new $jin2_atom_own( () => {
+	taskRow( id ) {
 		var next = new $mol_app_todo_task_view_row
 		next.task = () => this.task( id )
 		next.taskDrops = () => this.taskDrops( id )
 		return next
-	} ) }
+	}
 
 	@$jin2_grab
 	taskDrops( id ) { return new $jin2_atom(

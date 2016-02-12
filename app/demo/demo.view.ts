@@ -16,16 +16,14 @@ class $mol_app_demo extends $mol.$mol_app_demo {
 	
 	@ $jin2_grab
 	screen( id : string ) {
-		return new $jin2_atom_own( () => {
-			var view = new $mol_app_demo_screen
-			view.content = () => this.widget( id )
-			return view 
-		})
+		var view = new $mol_app_demo_screen
+		view.content = () => this.widget( id )
+		return view 
 	}
 	
 	@ $jin2_grab
 	widget( id : string ) {
-		return new $jin2_atom_own( () => new $mol[ id ] )
+		return new $mol[ id ]
 	}
 	
 }
@@ -35,7 +33,7 @@ class $mol_app_demo_screen extends $mol.$mol_app_demo_screen {
 	
 	@ $jin2_grab
 	title() {
-		return new $jin2_atom( () => this.objectOwner.objectId )
+		return new $jin2_atom( () => this.objectId )
 	}
 	
 	@ $jin2_grab

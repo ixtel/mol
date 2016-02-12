@@ -10,12 +10,8 @@ class $mol_tabler_demo extends $mol.$mol_tabler_demo {
 		}
 		return rows
 	} ) }
-
-	@ $jin2_grab
-	row( id : number ) { return new $jin2_atom_own( () => {
-		var view = new $mol_tabler_demo_row
-		return view
-	} ) }
+	
+	@ $jin2_grab row( id : number ) { return new $mol_tabler_demo_row }
 	
 }
 
@@ -23,7 +19,7 @@ class $mol_tabler_demo extends $mol.$mol_tabler_demo {
 class $mol_tabler_demo_row extends $mol.$mol_tabler_demo_row {
 	
 	@ $jin2_grab
-	id() { return new $jin2_atom( () => this.objectOwner.objectId ) }
+	id() { return new $jin2_atom( () => this.objectId ) }
 
 	@ $jin2_grab
 	stringContent() { return new $jin2_atom(

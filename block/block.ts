@@ -1,24 +1,27 @@
 /** Реактивная модель отображения, представляет один элемент дерева (reactive virtual dom). */
-class $mol_block extends $jin2_object {
+class $mol_block extends $jin2_atom<any> {
 
     /** Любой компонент может быть отдельным приложением, доступным по пути вида: klassName.app(id?) */
 	@ $jin2_grab
 	static app( id : string ) {
-		return new $jin2_atom_own( () => new this() )
+		return new this()
 	}
-
-    constructor() {
-        super()
-    }
+	
+	get() : this {
+		return super.get()
+	}
+	
+	_ = this
+	error = null
 
     /** Имя элемента (используется для создания, если элемент не найден в дереве). */
     tagName() {
-        return { get : () => 'div' }
+        return new $jin2_prop( 'div' )
     }
     
     /** Пространсто имён элемента (используется для создания, если элемент не найден в дереве). */
     nameSpace() {
-        return { get : () => 'http://www.w3.org/1999/xhtml' }
+        return new $jin2_prop( 'http://www.w3.org/1999/xhtml' )
     }
 
     /** Список дочерних элементов. */
@@ -87,11 +90,11 @@ class $mol_block extends $jin2_object {
             } )( name )
             
             //Устанавливаем аттрибуты элемента (БЭМ) для стилизации
-            var proto1 = this.objectOwner.objectOwner
+            var proto1 = this.objectOwner
             while( proto1 && ( proto1.constructor !== $mol_block ) && ( proto1.constructor !== Function ) ) {
                 var className = $jin2_object_path( proto1.constructor )
                 if( !className ) continue
-                prev.setAttribute( className.replace( /\$/g , '' ) + '_' + this.objectOwner.objectName , '' )
+                prev.setAttribute( className.replace( /\$/g , '' ) + '_' + this.objectName , '' )
                 proto1 = Object.getPrototypeOf( proto1 )
             }
     
