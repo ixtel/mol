@@ -4,7 +4,7 @@ class $mol_app_calc extends $mol.$mol_app_calc {
 	@ $jin2_grab
 	rows() { return this.atom( () => {
 		var rows = []
-		for( var i = 0 ; i < 30 ; ++i ) {
+		for( var i = 0 ; i < 101 ; ++i ) {
 			rows.push( this.row( i ).get() )
 		}
 		return rows
@@ -14,7 +14,7 @@ class $mol_app_calc extends $mol.$mol_app_calc {
 	row( id : number ) { return ( new $mol_view ).setup( _ => {
 		_.child = () => this.prop( () => {
 			var cells = []
-			for( var i = 0 ; i < 30 ; ++i ) {
+			for( var i = 0 ; i < 27 ; ++i ) {
 				if( i > 0 ) {
 					if( id > 0 ) {
 						cells.push( this.cell( this.number2string( i - 1 ) + id ).get() )
