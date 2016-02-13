@@ -1,4 +1,4 @@
-[mol_error="fail"] {
+[mol_block_error="fail"] {
 	background-image: repeating-linear-gradient(
 		45deg,
 		rgba(255,220,220,1),
@@ -9,13 +9,13 @@
 	background-size: 28px 28px !important;
 }
 
-@keyframes mol_show {
+@keyframes mol_block_show {
 	from {
 		opacity: 0;
 	}
 }
 
-@keyframes mol_error_move {
+@keyframes mol_block_error_move {
   0% {
 	background-position: 0 0;
   }
@@ -24,11 +24,11 @@
   }
 }
 
-[mol] {
-	animation: jin2_show .25s ease-in;
+[mol_block] {
+	animation: mol_block_show .25s ease-in;
 }
 
-[mol_error="wait"] {
+[mol_block_error="wait"] {
 	background-image: repeating-linear-gradient(
 		45deg,
 		rgba(0,0,255,.05),
@@ -37,5 +37,5 @@
 		rgba(255,255,255,.02) 20px
 	) !important;
 	background-size: 28px 28px !important;
-	animation: mol_show 1s linear , mol_error_move .25s linear infinite !important;
+	animation: mol_block_show 1s linear , mol_block_error_move .25s linear infinite !important;
 }

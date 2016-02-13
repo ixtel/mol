@@ -134,7 +134,7 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 
 	@ $jin2_grab
 	sanitizerMessage() {
-		return new $jin2_atom( () => 'Clear completed (' + this.completedCount().get() + ')' )
+		return new $jin2_atom( () => `Clear completed (${this.completedCount().get()})` )
 	}
 	
 	@ $jin2_grab

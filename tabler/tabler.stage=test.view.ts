@@ -22,8 +22,9 @@ class $mol_tabler_demo_row extends $mol.$mol_tabler_demo_row {
 	id() { return new $jin2_atom( () => this.objectId ) }
 
 	@ $jin2_grab
-	stringContent() { return new $jin2_atom(
-		() => 'Hello, Mister ' + '00000000000000000000'.substring( Math.round( Math.random() * 20 ) )
-	) }
+	stringContent() { return new $jin2_atom( () => {
+		var name = '00000000000000000000'.substring( Math.round( Math.random() * 20 ) ) + '7'
+		return `Hello, Mister ${name}!`
+	} ) }
 
 }

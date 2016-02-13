@@ -1,7 +1,7 @@
-/** Реактивная модель отображения, представляет один элемент дерева (reactive virtual dom). */
+/// Reactive statefull lazy ViewModel 
 class $mol_block extends $jin2_atom<any> {
 
-    /** Любой компонент может быть отдельным приложением, доступным по пути вида: klassName.app(id?) */
+    /// Quick Factory to make root of app like `$mol_block.app()`
 	@ $jin2_grab
 	static app( id : string ) {
 		return new this()
@@ -14,17 +14,17 @@ class $mol_block extends $jin2_atom<any> {
 	_ = this
 	error = null
 
-    /** Имя элемента (используется для создания, если элемент не найден в дереве). */
+    /// Name of element that creates when element not found in DOM
     tagName() {
         return new $jin2_prop( 'div' )
     }
     
-    /** Пространсто имён элемента (используется для создания, если элемент не найден в дереве). */
+    /// Namespace of element that create when element not found in DOM
     nameSpace() {
         return new $jin2_prop( 'http://www.w3.org/1999/xhtml' )
     }
 
-    /** Список дочерних элементов. */
+    /// Child ViewModels|Nodes|primitives
     child() {
         return new $jin2_atom( () => null )
     }
@@ -33,7 +33,7 @@ class $mol_block extends $jin2_atom<any> {
         return this.child()
     }
 
-    /** Словарь аттрибутов. */
+    /// Dictionary of attributes like { 'attr_mol_block_error' : $mol_prop( 'fail' )  }
     attr() {
         var attr = <{ [ index : string ] : $jin2_prop_iface<string> }> {}
         for( var key in this ) {
@@ -44,7 +44,7 @@ class $mol_block extends $jin2_atom<any> {
         return attr
     }
     
-    /** Словарь полей элемента (поддерживаются ключи вида "style.top"). */
+    /// Dictionary of fields like { 'field_style_top' : $mol_prop( '10em' )  }
     field() {
         var field = <{ [ index : string ] : $jin2_prop_iface<any> }> {}
         for( var key in this ) {
@@ -55,7 +55,7 @@ class $mol_block extends $jin2_atom<any> {
         return field
     }
     
-    /** Словарь обработчиков событий (объект события помещается в соответствующее свойство). */
+    /// Dictionary of event handlers like { 'click' : $mol_prop( null , ( event : MouseEvent ) => { alert( event.type ) } )  }
     event() {
         var event = <{ [ index : string ] : $jin2_prop_iface<Event> }> {}
         for( var key in this ) {
@@ -66,7 +66,7 @@ class $mol_block extends $jin2_atom<any> {
         return event
     }
     
-    /** DOM-элемент. Если не находится в дереве по objectPath, то создаётся. */
+    /// DOM Node that creates when not fount in DOm by id = this.objectPath
     @ $jin2_grab
     node() {
         return new $jin2_vary( () => {
@@ -78,18 +78,18 @@ class $mol_block extends $jin2_atom<any> {
                 prev.setAttribute( 'id' , id )
             }
             
-            // Навешиваем обработчики событий
+            /// Attah event handlers
             var router = prev // ( document.body === prev ) ? document : prev
             var events = this.event()
             for( var name in events ) ( name => {
                 var prop = events[ name ]
                 router.addEventListener( name , event => {
                     prop.set( event )
-                    requestAnimationFrame( $jin2_atom.induce.bind( $jin2_atom ) ) 
+                    //requestAnimationFrame( $jin2_atom.induce.bind( $jin2_atom ) ) 
                 } , false )
             } )( name )
             
-            //Устанавливаем аттрибуты элемента (БЭМ) для стилизации
+            /// Set BEM-like block-attributes with inheritance support
             var proto1 = this.objectOwner
             while( proto1 && ( proto1.constructor !== $mol_block ) && ( proto1.constructor !== Function ) ) {
                 var className = $jin2_object_path( proto1.constructor )
@@ -98,7 +98,7 @@ class $mol_block extends $jin2_atom<any> {
                 proto1 = Object.getPrototypeOf( proto1 )
             }
     
-            // Устанавливаем аттрибуты блока (БЭМ) для стилизации
+            /// Set BEM-like element-attributes with inheritance support
             var proto2 = this
             while( proto2 && ( proto2.constructor !== $mol_block ) ) {
                 var className = $jin2_object_path( proto2.constructor )
@@ -107,6 +107,7 @@ class $mol_block extends $jin2_atom<any> {
                 proto2 = Object.getPrototypeOf( proto2 )
             }
             
+			/// Async render for renreding based on real size and pos of element (i.e. render only visible, set scrolling position...)
             var onAttach = event => {
                 prev.removeEventListener( 'DOMNodeInserted' , onAttach )
                 this.version().pull()
@@ -126,7 +127,7 @@ class $mol_block extends $jin2_atom<any> {
         var prop = new $jin2_atom( () => {
         var prev = this.node().get()
         
-        // Устанавливаем пользовательские аттрибуты 
+        /// Update dynamic attributes
         var attrs = this.attr()
         for( var name in attrs ) {
             var p = prev.getAttribute( name )
@@ -136,7 +137,7 @@ class $mol_block extends $jin2_atom<any> {
             }
         }
 
-        // Рендерим дочерние элементы
+        /// Render child nodes
         var childs = this.childNodes().get()
         if( childs != null ) {
             var childViews = [].concat.apply( [] , [].concat( childs ) )
@@ -187,7 +188,7 @@ class $mol_block extends $jin2_atom<any> {
             }
         }
 
-        // Убновляем поля элемента
+        // Update element fields
         var fields = this.field()
         for( var path in fields ) {
             var names = path.split( '_' )
@@ -198,16 +199,16 @@ class $mol_block extends $jin2_atom<any> {
             obj[names[names.length-1]] = fields[path].get()
         }
         
-        prev.removeAttribute( 'mol_error' )
+        prev.removeAttribute( 'mol_block_error' )
         
         return prev
     })
     prop.fail_ = ( error ) => {
         var node = this.node().get()
         if( error === $jin2_atom.wait ) {
-            node.setAttribute( 'mol_error' , 'wait' )
+            node.setAttribute( 'mol_block_error' , 'wait' )
         } else {
-            node.setAttribute( 'mol_error' , 'fail' )
+            node.setAttribute( 'mol_block_error' , 'fail' )
         }
         return node
     } 
@@ -216,8 +217,10 @@ class $mol_block extends $jin2_atom<any> {
     
 }
 
+/// Namespace for autogenerated from *.view.tree ViewModels
 module $mol {}
 
+/// Decorator that replaces autogenerated View Model by custom class
 function $mol_replace( Class ) {
     $mol[ Class.name ] = Class
     window[ Class.name ] = Class

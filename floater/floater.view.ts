@@ -22,7 +22,7 @@ class $mol_floater extends $mol.$mol_floater {
 	@ $jin2_grab
 	transform() { return new $jin2_atom( () => {
 		var offset = this.offset().get()
-		return 'translate( ' + offset[0] + 'px , ' + offset[1] + 'px )'
+		return `translate( ${offset[0]}px , ${offset[1]}px )`
 	} ) }
 	
 	@ $jin2_grab
