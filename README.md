@@ -1,7 +1,7 @@
 # $mol(ecule)
 $mol - next gen statefull reactive micromodular ui framework. Very simple, but very powerfull.
 
-![mol.jpg]($mol ui framework)
+![$mol ui framework](mol.jpg)
 
 * [Quick start with PMS architecture](https://github.com/nin-jin/pms-stub)
 
