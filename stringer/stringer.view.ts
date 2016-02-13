@@ -7,6 +7,7 @@ class $mol_stringer extends $mol.$mol_stringer {
 		switch( next.keyCode ) {
 			case 13 : // enter
 				this.commits().set( next )
+				next.target.blur()
 				break
 			case 27 : // escape
 				this.reverts().set( next )

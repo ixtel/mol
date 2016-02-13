@@ -7,4 +7,4 @@ $mol_stringer : $mol_view
 	field_textContent < value : =
 	event_keydown < presses : null
 	event_input < changes : null
-	event_blur < blurs : null
+	event_blur < blurs < commits : null

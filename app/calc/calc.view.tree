@@ -1,0 +1,7 @@
+$mol_app_calc : $mol_tabler
+
+$mol_app_calc_header : $mol_floater
+	child < title : =
+
+$mol_app_calc_cell : $mol_stringer
+	attr_mol_app_calc_cell_result < result : =

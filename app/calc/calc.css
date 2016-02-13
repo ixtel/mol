@@ -1,0 +1,22 @@
+[mol_app_calc_lister] {
+	margin: 0;
+}
+
+[mol_app_calc_header] {
+	text-align: center;
+	vertical-align: middle;
+	padding: .2vmin .5vmin;
+	outline: 1px solid rgba(0,0,0,.2);
+}
+
+[mol_app_calc_cell] {
+	min-width: 3em;
+}
+
+[mol_app_calc_cell]:not([mol_app_calc_cell_result=""]):not(:focus):not(:empty):after {
+	content: attr( mol_app_calc_cell_result );
+	display: flex;
+	background: white;
+    position: relative;
+    margin-top: -1.25em;
+}
