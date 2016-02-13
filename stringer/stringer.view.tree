@@ -1,4 +1,4 @@
-$mol_stringer : $mol_block
+$mol_stringer : $mol_view
 	valueChanged : =
 	attr_mol_stringer_hint < hint : =hint
 	attr_tabindex : =0

@@ -1,6 +1,6 @@
 $mol_app_demo : $mol_scroller
 
-$mol_app_demo_screen : $mol_block
+$mol_app_demo_screen : $mol_view
 	attr_mol_app_demo_screen_expanded < expanded : false
 	child
 		< titler : $mol_checker

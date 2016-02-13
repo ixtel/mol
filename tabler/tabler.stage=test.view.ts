@@ -2,7 +2,7 @@
 class $mol_tabler_demo extends $mol.$mol_tabler_demo {
 	
 	@ $jin2_grab
-	rows() { return new $jin2_atom( () => {
+	rows() { return this.atom( () => {
 		var rows = []
 		rows.push( this.header().get() )
 		for( var i = 0 ; i < 200 ; ++i ) {
@@ -19,12 +19,12 @@ class $mol_tabler_demo extends $mol.$mol_tabler_demo {
 class $mol_tabler_demo_row extends $mol.$mol_tabler_demo_row {
 	
 	@ $jin2_grab
-	id() { return new $jin2_atom( () => this.objectId ) }
+	id() { return this.prop( () => this.objectId ) }
 
 	@ $jin2_grab
-	stringContent() { return new $jin2_atom( () => {
+	stringContent() {
 		var name = '00000000000000000000'.substring( Math.round( Math.random() * 20 ) ) + '7'
-		return `Hello, Mister ${name}!`
-	} ) }
+		return this.atom( `Hello, Mister ${name}!` ) 
+	}
 
 }

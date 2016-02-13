@@ -3,7 +3,7 @@ class $mol_app_demo extends $mol.$mol_app_demo {
 	
 	@ $jin2_grab
 	child() {
-		return new $jin2_atom( () => {
+		return this.atom( () => {
 			var screens = []
 			for( var id in $mol ) {
 				if( id === '$mol_app_demo' ) continue
@@ -33,13 +33,13 @@ class $mol_app_demo_screen extends $mol.$mol_app_demo_screen {
 	
 	@ $jin2_grab
 	title() {
-		return new $jin2_atom( () => this.objectId )
+		return this.prop( () => this.objectId )
 	}
 	
 	@ $jin2_grab
 	expanded() {
 		var state = $jin2_state_local.item( this.objectPath + '.expanded_' )
-		return new $jin2_atom( () => !!state.get() , next => state.set( next ) )
+		return this.prop( () => !!state.get() , next => state.set( next ) )
 	}
 	
 }

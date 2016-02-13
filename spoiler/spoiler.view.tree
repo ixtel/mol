@@ -1,6 +1,6 @@
-$mol_spoiler : $mol_block child
+$mol_spoiler : $mol_view child
 	< switcher : $mol_checker
 		child < title : null
 		checked < expanded : false
-	< contenter : $mol_block
+	< contenter : $mol_view
 		child < content : null

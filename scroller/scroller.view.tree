@@ -1,4 +1,4 @@
-$mol_scroller : $mol_block
+$mol_scroller : $mol_view
 	attr_mol_scroller_overflowTop < overflowTop : false
 	attr_mol_scroller_overflowBottom < overflowBottom : false
 	attr_mol_scroller_overflowLeft < overflowLeft : false

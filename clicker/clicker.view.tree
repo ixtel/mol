@@ -1,4 +1,4 @@
-$mol_clicker : $mol_block
+$mol_clicker : $mol_view
 	field_tabIndex : 0
 	attr_mol_clicker_type < type : =minor
 	event_click < clicks : null

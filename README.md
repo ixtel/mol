@@ -5,7 +5,8 @@ It is new age ui framework. Very simple, but very powerfull.
 
 ## Basic molecules
 
- * [$mol_block](block) - abstract block 
+ * [$mol_model](model) - abstract reactive model
+ * [$mol_view](view) - abstract reactive view model 
  * [$mol_filler](filler) - lorem ipsum
 
 ## Simple controls

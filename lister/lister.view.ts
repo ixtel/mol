@@ -2,14 +2,14 @@
 class $mol_lister extends $mol.$mol_lister {
 	
 	@ $jin2_grab
-	scroller() { return new $jin2_prop( () => {
+	scroller() { return this.atom( () => {
 		var scroller = this
 		while( scroller && !scroller['scrollTop'] ) scroller = scroller.objectOwner
 		return scroller
 	} ) }
 	
 	@ $jin2_grab
-	itemsVisible() { return new $jin2_atom( () => {
+	itemsVisible() { return this.atom( () => {
 		var items = this.items().get()
 		if( !items ) return items
 		
