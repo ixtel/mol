@@ -1,5 +1,5 @@
 # $mol(ecule)
-It is new age ui framework. Very simple, but very powerfull.
+It is new age statefull reactive ui micromodular framework. Very simple, but very powerfull.
 
 * [Quick start with PMS architecture](https://github.com/nin-jin/pms-stub)
 
