@@ -212,3 +212,14 @@ function $mol_replace( Class ) {
 	window[ Class.name ] = Class
 	return Class
 }
+
+/// Autorender views to dom
+document.addEventListener( 'DOMContentLoaded' , event => {
+	var nodes = document.querySelectorAll( '[mol_view_app]' )
+	for( var i = nodes.length - 1 ; i >= 0 ; --i ) {
+		var node = nodes[i]
+		var klass = node.getAttribute( 'mol_view_app' )
+		node.id = klass + '.app_'
+		$mol[klass].app().node().get()
+	}  
+} )
