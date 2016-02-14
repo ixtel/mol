@@ -4,6 +4,7 @@ class $mol_app_calc extends $mol.$mol_app_calc {
 	@ $jin2_grab
 	rows() { return this.atom( () => {
 		var rows = []
+		//var limit = this.lister().get()['rowLimit']().get()
 		for( var i = 0 ; i < 101 ; ++i ) {
 			rows.push( this.row( i ).get() )
 		}
@@ -49,7 +50,7 @@ class $mol_app_calc extends $mol.$mol_app_calc {
 
 	@ $jin2_grab
 	value( id : string ) {
-		var state = $jin2_state_local.item( this.objectPath + '.value_' + id )
+		var state = this.persist( 'value_' + id )
 		return this.atom( () => state.get() , next => {
 			var numb = Number( next ) 
 			if( numb.toString() == next ) return state.set( numb )

@@ -3,7 +3,7 @@ class $mol_scroller extends $mol.$mol_scroller {
 	
 	@ $jin2_grab
 	scrollTop() {
-		var state = $jin2_state_local.item( this.objectPath + '.scrollTop_' )
+		var state = this.persist( 'scrollTop_' )
 		return this.atom(
 			() => Number( state.get() ) || 0 ,
 			next => ( state.set( next ) , next )
@@ -12,7 +12,7 @@ class $mol_scroller extends $mol.$mol_scroller {
 
 	@ $jin2_grab
 	scrollLeft() {
-		var state = $jin2_state_local.item( this.objectPath + '.scrollLeft_' )
+		var state = this.persist( 'scrollLeft_' )
 		return this.atom(
 			() => Number( state.get() ) || 0 ,
 			next => ( state.set( next ) , next )

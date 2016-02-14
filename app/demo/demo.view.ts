@@ -38,7 +38,7 @@ class $mol_app_demo_screen extends $mol.$mol_app_demo_screen {
 	
 	@ $jin2_grab
 	expanded() {
-		var state = $jin2_state_local.item( this.objectPath + '.expanded_' )
+		var state = this.persist( 'expanded_' )
 		return this.prop( () => !!state.get() , next => state.set( next ) )
 	}
 	

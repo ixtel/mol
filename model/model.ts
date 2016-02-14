@@ -27,6 +27,14 @@ class $mol_model extends $jin2_atom<any> {
 		reap? : () => boolean
 	) : $jin2_prop_iface<Value> {
 		return new $jin2_atom( pull , put , reap )
-	}	
+	}
+	
+	argument( path? : string ) {
+		return $jin2_state_arg.item( this.objectPath + ( path ? '.' + path : '' ) )
+	}
+
+	persist( path? : string ) {
+		return $jin2_state_local.item( this.objectPath + '.' + ( path ? '.' + path : '' ) )
+	}
 
 }
