@@ -168,7 +168,7 @@ class $mol_view extends $mol_model {
 				var names = path.split( '_' )
 				var obj = prev
 				for( var i = 0 ; i < names.length - 1 ; ++i ) {
-				if( names[i] ) obj = obj[ names[i] ]
+					if( names[i] ) obj = obj[ names[i] ]
 				}
 				obj[ names[ names.length - 1 ] ] = this[ 'field_' + path ]().get()
 			} )
