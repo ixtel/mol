@@ -15,42 +15,44 @@ class $mol_view extends $mol_model {
 	child() { return this.prop( null ) }
 	childNodes() { return this.child() }
 
-	/// Dictionary of attributes like { 'attr_mol_view_error' : $mol_prop( 'fail' )  }
-	_attr : { [ index : string ] : $jin2_prop_iface<string> }
-	attr() {
-		if( this._attr ) return this._attr
-		this._attr =  {}
+	/// List of attribute names like [ 'type' , 'required' , 'mol_view_error' ]
+	attrNames() {
+		if( this.hasOwnProperty( '_attrNames' ) ) return this._attrNames
+		var names = this._attrNames = []
 		for( var key in this ) {
-			if( typeof this[ key ] !== 'function' ) continue
 			if( key.substring( 0 , 5 ) !== 'attr_' ) continue
-			this._attr[ key.substring( 5 ) ] = this[ key ]()
-		}
-		return this._attr
-	}
-	
-	/// Dictionary of fields like { 'field_style_top' : $mol_prop( '10em' )  }
-	_field : { [ index : string ] : $jin2_prop_iface<any> }
-	field() {
-		if( this._field ) return this._field
-		this._field = {}
-		for( var key in this ) {
 			if( typeof this[ key ] !== 'function' ) continue
+			names.push( key.substring( 5 ) )
+		}
+		return names
+	}
+	_attrNames : string[]
+	
+	/// List of field names like [ 'value' , 'scrollTop' , 'style_top' ]
+	fieldNames() {
+		if( this.hasOwnProperty( '_fieldNames' ) ) return this._fieldNames
+		var names = this._fieldNames = []
+		for( var key in this ) {
 			if( key.substring( 0 , 6 ) !== 'field_' ) continue
-			this._field[ key.substring( 6 ) ] = this[ key ]()
-		}
-		return this._field
-	}
-	
-	/// Dictionary of event handlers like { 'click' : $mol_prop( null , ( event : MouseEvent ) => { alert( event.type ) } )  }
-	event() {
-		var event = <{ [ index : string ] : $jin2_prop_iface<Event> }> {}
-		for( var key in this ) {
 			if( typeof this[ key ] !== 'function' ) continue
-			if( key.substring( 0 , 6 ) !== 'event_' ) continue
-			event[ key.substring( 6 ) ] = this[ key ]()
+			names.push( key.substring( 6 ) )
 		}
-		return event
+		return names
 	}
+	_fieldNames : string[]
+	
+	/// List of event names  like [ 'click' , 'scroll' ]
+	eventNames() {
+		if( this.hasOwnProperty( '_eventNames' ) ) return this._eventNames
+		var names = this._eventNames = []
+		for( var key in this ) {
+			if( key.substring( 0 , 6 ) !== 'event_' ) continue
+			if( typeof this[ key ] !== 'function' ) continue
+			names.push( key.substring( 6 ) )
+		}
+		return names
+	}
+	_eventNames : string[]
 	
 	/// DOM Node that creates when not fount in DOm by id = this.objectPath
 	@ $jin2_grab
@@ -65,15 +67,13 @@ class $mol_view extends $mol_model {
 			}
 			
 			/// Attah event handlers
-			var router = prev // ( document.body === prev ) ? document : prev
-			var events = this.event()
-			for( var name in events ) ( name => {
-				var prop = events[ name ]
-				router.addEventListener( name , event => {
+			Object.getPrototypeOf( this ).eventNames().forEach( name => {
+				var prop = this[ 'event_' + name ]()
+				prev.addEventListener( name , event => {
 					prop.set( event )
 					$jin2_atom.induce()
-				} , false )
-			} )( name )
+				} )
+			} )
 			
 			/// Set BEM-like block-attributes with inheritance support
 			var proto1 = this.objectOwner
@@ -93,17 +93,6 @@ class $mol_view extends $mol_model {
 				proto2 = Object.getPrototypeOf( proto2 )
 			}
 			
-			/// Async render for renreding based on real size and pos of element (i.e. render only visible, set scrolling position...)
-			var onAttach = event => {
-				prev.removeEventListener( 'DOMNodeInserted' , onAttach )
-				this.version()['pull']()
-			}
-			if( prev.parentNode ) {
-				setTimeout( onAttach )
-			} else {
-				prev.addEventListener( 'DOMNodeInserted' , onAttach )
-			}
-			
 			return prev
 		} )
 	}
@@ -114,14 +103,13 @@ class $mol_view extends $mol_model {
 			var prev = this.node().get()
 			
 			/// Update dynamic attributes
-			var attrs = this.attr()
-			for( var name in attrs ) {
+			Object.getPrototypeOf( this ).attrNames().forEach( name => {
 				var p = prev.getAttribute( name )
-				var n = String( attrs[ name ].get() )
+				var n = String( this[ 'attr_' + name ]().get() )
 				if( p !== n ) {
 					prev.setAttribute( name , n )
 				}
-			}
+			} )
 
 			/// Render child nodes
 			var childs = this.childNodes().get()
@@ -155,6 +143,7 @@ class $mol_view extends $mol_model {
 									}
 								}
 							}
+							view.version().get()
 						} 
 					} else {
 						if( nextNode && nextNode.nodeName === '#text' ) {
@@ -175,15 +164,14 @@ class $mol_view extends $mol_model {
 			}
 
 			// Update element fields
-			var fields = this.field()
-			for( var path in fields ) {
+			Object.getPrototypeOf( this ).fieldNames().forEach( path => {
 				var names = path.split( '_' )
-				var obj = prev 
+				var obj = prev
 				for( var i = 0 ; i < names.length - 1 ; ++i ) {
 				if( names[i] ) obj = obj[ names[i] ]
 				}
-				obj[names[names.length-1]] = fields[path].get()
-			}
+				obj[ names[ names.length - 1 ] ] = this[ 'field_' + path ]().get()
+			} )
 			
 			prev.removeAttribute( 'mol_view_error' )
 			
@@ -220,6 +208,8 @@ document.addEventListener( 'DOMContentLoaded' , event => {
 		var node = nodes[i]
 		var klass = node.getAttribute( 'mol_view_app' )
 		node.id = klass + '.app_'
-		$mol[klass].app().node().get()
+		var app = $mol[klass].app() 
+		app.node().get()
+		app.version().get()
 	}  
 } )

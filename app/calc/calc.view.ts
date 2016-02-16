@@ -5,7 +5,7 @@ class $mol_app_calc extends $mol.$mol_app_calc {
 	rows() { return this.atom( () => {
 		var rows = []
 		//var limit = this.lister().get()['rowLimit']().get()
-		for( var i = 0 ; i < 101 ; ++i ) {
+		for( var i = 0 ; i < 1001 ; ++i ) {
 			rows.push( this.row( i ).get() )
 		}
 		return rows

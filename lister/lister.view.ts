@@ -20,9 +20,12 @@ class $mol_lister extends $mol.$mol_lister {
 		var limit = ( scroller['scrollTop']().get() + screen.height ) / rowMinHeight
 		if( limit >= items.length ) return items
 		
-		var filler = this.filler().get()
-		filler.height().set( rowMinHeight * ( items.length - limit ) + 'px' )
-		return items.slice( 0 , limit ).concat( filler ) 
+		return items.slice( 0 , limit ).concat( this.filler().get() ) 
 	} ) }
+	
+	@ $jin2_grab
+	fillerHeight() { return this.atom(
+		() => ( this.items().get().length - this.itemsVisible().get().length ) * this.rowMinHeight().get() + 'px'
+	) }
 	
 }
