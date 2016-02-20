@@ -38,7 +38,7 @@ class $mol_app_demo_screen extends $mol.$mol_app_demo_screen {
 	
 	@ $jin2_grab
 	expanded() {
-		var state = this.persist( 'expanded_' )
+		var state = this.persist<boolean>( 'expanded' )
 		return this.prop( () => !!state.get() , next => state.set( next ) )
 	}
 	

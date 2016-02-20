@@ -4,7 +4,7 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	
 	@ $jin2_grab
 	tasksAll() {
-		var state = this.persist( 'tasksAll_' )
+		var state = this.persist<number[]>( 'tasksAll' )
 		return this.atom<$mol_app_todo_task[]>(
 			() =>  ( state.get() || [] ).map( id => this.task( id ).get() ) ,
 			next => {

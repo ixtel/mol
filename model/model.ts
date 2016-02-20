@@ -30,11 +30,23 @@ class $mol_model extends $jin2_atom<any> {
 	}
 	
 	argument( path? : string ) {
-		return $jin2_state_arg.item( this.objectPath + ( path ? '.' + path : '' ) )
+		var chunk = this.objectName
+		if( this.objectId )  chunk += '_' + this.objectId
+		if( path ) chunk += '.' + path
+		
+		var owner = this.objectOwner
+		if( owner && owner.argument ) return owner.argument( chunk )
+		else return $jin2_state_arg.item( chunk )
 	}
 
-	persist( path? : string ) {
-		return $jin2_state_local.item( this.objectPath + '.' + ( path ? '.' + path : '' ) )
+	persist<Value>( path? : string ) {
+		var chunk = this.objectName
+		if( this.objectId )  chunk += '_' + this.objectId
+		if( path ) chunk += '.' + path
+		
+		var owner = this.objectOwner
+		if( owner && owner.persist ) return owner.persist( chunk )
+		else return $jin2_state_local.item<Value>( chunk )
 	}
 
 }
