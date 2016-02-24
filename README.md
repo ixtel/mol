@@ -1,5 +1,5 @@
 # $mol(ecule)
-$mol - next gen statefull reactive micromodular ui framework. Very simple, but very powerfull.
+$mol - next gen stateful reactive micromodular ui framework. Very simple, but very powerful.
 
 ![$mol ui framework](mol.jpg)
 
