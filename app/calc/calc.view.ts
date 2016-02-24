@@ -51,7 +51,7 @@ class $mol_app_calc extends $mol.$mol_app_calc {
 	@ $jin2_grab
 	value( id : string ) {
 		var state = this.persist<string>( 'value_' + id )
-		return this.atom( () => state.get() , next => {
+		return this.prop( () => state.get() , next => {
 			var numb = Number( next ) 
 			if( numb.toString() == next ) return state.set( numb )
 			return state.set( next )

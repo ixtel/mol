@@ -1,7 +1,8 @@
 $mol_lister : $mol_view
 	rowMinHeight : 40
 	child < itemsVisible < items : null
-	filler : $mol_lister_filler height < fillerHeight : =0
+	fillerStart : $mol_lister_filler height < fillerStartHeight : =0
+	fillerEnd : $mol_lister_filler height < fillerEndHeight : =0
 
 $mol_lister_filler : $mol_view
 	field_style_height < height : =0

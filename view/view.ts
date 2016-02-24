@@ -80,7 +80,7 @@ class $mol_view extends $mol_model {
 			while( proto1 && ( proto1.constructor !== $mol_view ) && ( proto1.constructor !== Function ) ) {
 				var className = $jin2_object_path( proto1.constructor )
 				if( !className ) continue
-				prev.setAttribute( className.replace( /\$/g , '' ) + '_' + this.objectName , '' )
+				prev.setAttribute( className.replace( /\$/g , '' ) + '_' + this.objectName.replace( /\(.*/g , '' ) , '' )
 				proto1 = Object.getPrototypeOf( proto1 )
 			}
 	
@@ -207,7 +207,7 @@ document.addEventListener( 'DOMContentLoaded' , event => {
 	for( var i = nodes.length - 1 ; i >= 0 ; --i ) {
 		var node = nodes[i]
 		var klass = node.getAttribute( 'mol_view_app' )
-		node.id = klass + '.app_'
+		node.id = klass + '.app()'
 		var app = $mol[klass].app() 
 		app.node().get()
 		app.version().get()

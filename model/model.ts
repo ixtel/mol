@@ -31,7 +31,6 @@ class $mol_model extends $jin2_atom<any> {
 	
 	argument( path? : string ) {
 		var chunk = this.objectName
-		if( this.objectId )  chunk += '_' + this.objectId
 		if( path ) chunk += '.' + path
 		
 		var owner = this.objectOwner
@@ -41,7 +40,6 @@ class $mol_model extends $jin2_atom<any> {
 
 	persist<Value>( path? : string ) {
 		var chunk = this.objectName
-		if( this.objectId )  chunk += '_' + this.objectId
 		if( path ) chunk += '.' + path
 		
 		var owner = this.objectOwner

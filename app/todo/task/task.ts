@@ -1,9 +1,7 @@
 // Task model
 class $mol_app_todo_task extends $mol_model {
 
-	id() {
-		return new $jin2_prop( () => this.objectId )
-	}
+	id() { return this.prop( null ) }
 	
 	@ $jin2_grab
 	data() { return this.atom(

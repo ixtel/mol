@@ -30,7 +30,9 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	} ) }
 	
 	@ $jin2_grab
-	task( id ) { return new $mol_app_todo_task }
+	task( id ) { return (new $mol_app_todo_task).setup( _ => {
+		_.id = () => this.prop( id )
+	} ) }
 
 	@ $jin2_grab
 	allCompleted() { return this.atom(

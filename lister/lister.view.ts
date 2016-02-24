@@ -9,23 +9,51 @@ class $mol_lister extends $mol.$mol_lister {
 	} ) }
 	
 	@ $jin2_grab
-	itemsVisible() { return this.atom( () => {
-		var items = this.items().get()
-		if( !items ) return items
+	limitStart() { return this.atom( () => {
+		return 0
+		// var offset = 0
 		
-		var scroller = this.scroller().get()
-		if( !scroller ) return items
+		// var scroller = this.scroller().get()
+		// if( scroller ) offset += scroller['scrollTop']().get()
 		
-		var rowMinHeight = this.rowMinHeight().get()
-		var limit = ( scroller['scrollTop']().get() + screen.height ) / rowMinHeight
-		if( limit >= items.length ) return items
-		
-		return items.slice( 0 , limit ).concat( this.filler().get() ) 
+		// var limit = Math.floor( offset / this.rowMinHeight().get() )
+		// return limit
 	} ) }
 	
 	@ $jin2_grab
-	fillerHeight() { return this.atom(
-		() => ( this.items().get().length - this.itemsVisible().get().length ) * this.rowMinHeight().get() + 'px'
+	limitEnd() { return this.atom( () => {
+		var offset = screen.height
+		
+		var scroller = this.scroller().get()
+		if( scroller ) offset += scroller['scrollTop']().get()
+		
+		var limit = Math.ceil( offset / this.rowMinHeight().get() )
+		return limit
+	} ) }
+	
+	@ $jin2_grab
+	itemsVisible() { return this.atom( () => {
+		var items = this.items().get()
+		if( !items ) return []
+		
+		return items.slice( this.limitStart().get() , this.limitEnd().get() )
+	} ) }
+	
+	@ $jin2_grab
+	child() { return this.atom( () => {
+		return [ this.fillerStart().get() ].concat( this.itemsVisible().get() ).concat( this.fillerEnd().get() )
+	} ) }
+	
+	@ $jin2_grab
+	fillerStartHeight() { return this.atom(
+		() => this.limitStart().get() * this.rowMinHeight().get() + 'px'
+	) }
+	
+	@ $jin2_grab
+	fillerEndHeight() { return this.atom(
+		() => this.items().get()
+			? ( this.items().get().length - this.limitEnd().get() ) * this.rowMinHeight().get() + 'px'
+			: '0'
 	) }
 	
 }
