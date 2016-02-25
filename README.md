@@ -1,4 +1,6 @@
 # $mol(ecule)
+
+[![Join the chat at https://gitter.im/nin-jin/mol](https://badges.gitter.im/nin-jin/mol.svg)](https://gitter.im/nin-jin/mol?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 $mol - next gen stateful reactive micromodular ui framework. Very simple, but very powerful.
 
 ![$mol ui framework](mol.jpg)
