@@ -118,8 +118,13 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	@ $jin2_grab
 	footerContent() { return this.prop( () => [
 		this.pendingCount().get() ? this.pendinger().get() : null ,
+		this.tasksAll().get().length ? this.filter().get() : null ,
 		this.completedCount().get() ? this.sanitizer().get() : null ,
 	] ) }
+	
+	linkAll() { return $jin2_state_arg.link({ completed : null }) }
+	linkActive() { return $jin2_state_arg.link({ completed : false }) }
+	linkCompleted() { return $jin2_state_arg.link({ completed : true }) }
 	
 }
 

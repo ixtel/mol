@@ -3,12 +3,12 @@ class $mol_view extends $mol_model {
 
 	/// Name of element that creates when element not found in DOM
 	tagName() {
-		return new $jin2_prop( 'div' )
+		return this.prop( 'div' )
 	}
 	
 	/// Namespace of element that create when element not found in DOM
 	nameSpace() {
-		return new $jin2_prop( 'http://www.w3.org/1999/xhtml' )
+		return this.prop( 'http://www.w3.org/1999/xhtml' )
 	}
 
 	/// Child ViewModels|Nodes|primitives

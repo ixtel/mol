@@ -29,13 +29,10 @@ class $mol_model extends $jin2_atom<any> {
 		return new $jin2_atom( pull , put , reap )
 	}
 	
-	argument( path? : string ) {
-		var chunk = this.objectName
-		if( path ) chunk += '.' + path
-		
+	argument( path : string ) {
 		var owner = this.objectOwner
-		if( owner && owner.argument ) return owner.argument( chunk )
-		else return $jin2_state_arg.item( chunk )
+		if( owner && owner.argument ) return owner.argument( path )
+		else return $jin2_state_arg.item( path )
 	}
 
 	persist<Value>( path? : string ) {

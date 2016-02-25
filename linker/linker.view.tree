@@ -1,0 +1,5 @@
+$mol_linker : $mol_view
+	field_tabIndex : 0
+	tagName : =a
+	attr_href < link : =
+	attr_mol_linker_current < current : false

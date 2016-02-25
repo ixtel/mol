@@ -1,0 +1,18 @@
+[mol_linker] {
+	cursor: pointer;
+	text-decoration: inherit;
+	color: inherit;
+	margin: .25em;
+}
+
+[mol_linker]:focus {
+	outline: none;
+}
+
+[mol_linker]:hover {
+	text-decoration: underline;
+}
+
+[mol_linker_current="true"] {
+	font-weight: bold;
+}

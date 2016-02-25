@@ -32,6 +32,7 @@
 [mol_app_todo_footer] {
 	color: #777;
 	font-size: .8em;
+	justify-content: space-between;
 }
 
 [mol_app_todo_pendinger] {
@@ -42,6 +43,10 @@
 	margin: 0 .2em;
 	font-weight: bold;
 	display: inline;
+}
+
+[mol_app_todo_filter] {
+	padding: .25em .5em;
 }
 
 [mol_app_todo_sanitizer] {

@@ -13,6 +13,7 @@ $mol - next gen stateful reactive micromodular ui framework. Very simple, but ve
 
 ## Simple controls
 
+ * [$mol_linker](linker) - hyperlink
  * [$mol_clicker](clicker) - button
  * [$mol_checker](checker) - checkbox
  * [$mol_switcher](switcher) - radio button
