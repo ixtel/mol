@@ -1,6 +1,15 @@
 $mol_app_todo : $mol_scroller child
 	< panel : $mol_view child < sections
 		< titler : $mol_view child < title =todos
+		< header : $mol_rower child < headerContent
+			< allCompleter : $mol_checker checked < allCompleted : false
+			< adder : $mol_stringer
+				value < taskNewTitle : =
+				valueChanged < searchQuery : =
+				hint < taskNewHint : =What needs to be done?
+		< body : $mol_lister
+			rowMinHeight : 58
+			items < taskRows : null
 		< footer : $mol_rower child < footerContent
 			< pendinger : $mol_view child < pendingMessage
 				< pendingCounter : $mol_view child < pendingCount : 0
@@ -18,10 +27,3 @@ $mol_app_todo : $mol_scroller child
 			< sanitizer : $mol_clicker
 				clicks < sanitizes : null
 				child < sanitizerMessage : =Clear completed
-		< header : $mol_rower child < headerContent
-			< allCompleter : $mol_checker checked < allCompleted : false
-			< adder : $mol_stringer
-				value < taskNewTitle : =
-				valueChanged < searchQuery : =
-				hint < taskNewHint : =What needs to be done?
-		< body : $mol_lister items < taskRows : null

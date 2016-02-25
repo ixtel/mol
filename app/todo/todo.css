@@ -4,6 +4,30 @@
 	display: flex;
 }
 
+[mol_app_todo_allcompleter] {
+	padding: 1em;
+}
+
+[mol_scroller_adder] {
+	padding: 1em;
+}
+
+[mol_app_todo_task_view_row_completer] {
+	padding: 1em;
+}
+
+[mol_app_todo_task_view_row_title] {
+	padding: 1em;
+}
+
+[mol_app_todo_task_view_row_dropper] {
+	padding: 1em;
+}
+
+[mol_app_todo_] {
+	padding: 1em;
+}
+
 [mol_app_todo_panel] {
 	flex: 0 1 32em;	
 	max-width: 32em;
