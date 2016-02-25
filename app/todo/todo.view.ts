@@ -112,15 +112,10 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 		this.tasksAll().set( tasks )
 	} ) }
 
-	@ $jin2_grab
 	sanitizerMessage() { return this.prop( () => `Clear completed (${this.completedCount().get()})` ) }
 	
-	@ $jin2_grab
-	footerContent() { return this.prop( () => [
-		this.pendingCount().get() ? this.pendinger().get() : null ,
-		this.tasksAll().get().length ? this.filter().get() : null ,
-		this.completedCount().get() ? this.sanitizer().get() : null ,
-	] ) }
+	footerVisible() { return this.prop( () => this.tasksAll().get().length > 0 ) }
+	actionerVisible() { return this.prop( () => this.completedCount().get() > 0 ) }
 	
 	linkAll() { return $jin2_state_arg.link({ completed : null }) }
 	linkActive() { return $jin2_state_arg.link({ completed : false }) }

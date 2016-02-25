@@ -1,29 +1,36 @@
 $mol_app_todo : $mol_scroller child
+	< titler : $mol_view child < title =todos
 	< panel : $mol_view child < sections
-		< titler : $mol_view child < title =todos
 		< header : $mol_rower child < headerContent
 			< allCompleter : $mol_checker checked < allCompleted : false
 			< adder : $mol_stringer
 				value < taskNewTitle : =
 				valueChanged < searchQuery : =
 				hint < taskNewHint : =What needs to be done?
-		< body : $mol_lister
-			rowMinHeight : 58
+		< bodier : $mol_lister
+			rowMinHeight : 56
 			items < taskRows : null
-		< footer : $mol_rower child < footerContent
-			< pendinger : $mol_view child < pendingMessage
-				< pendingCounter : $mol_view child < pendingCount : 0
-				< pendingTail : = items left
-			< filter : $mol_view child < filterOptions
-				< filterAll : $mol_linker
-					link < linkAll : =#
-					child : =All
-				< filterActive : $mol_linker
-					link < linkActive : =#
-					child : =Active
-				< filterCompleted : $mol_linker
-					link < linkCompleted : =#
-					child : =Completed
-			< sanitizer : $mol_clicker
-				clicks < sanitizes : null
-				child < sanitizerMessage : =Clear completed
+		< footer : $mol_app_todo_ghost
+			visible < footerVisible : true
+			child < footerContent
+				< pendinger : $mol_view child < pendingMessage
+					< pendingCounter : $mol_view child < pendingCount : 0
+					< pendingTail : = items left
+				< filter : $mol_view child < filterOptions
+					< filterAll : $mol_linker
+						link < linkAll : =#
+						child : =All
+					< filterActive : $mol_linker
+						link < linkActive : =#
+						child : =Active
+					< filterCompleted : $mol_linker
+						link < linkCompleted : =#
+						child : =Completed
+				< actioner : $mol_app_todo_ghost
+					visible < actionerVisible : true
+					child < sanitizer : $mol_clicker
+						clicks < sanitizes : null
+						child < sanitizerMessage : =Clear completed
+
+$mol_app_todo_ghost : $mol_view
+	attr_mol_app_todo_ghost_visible < visible : true
