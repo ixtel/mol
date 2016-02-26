@@ -15,7 +15,7 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	}
 
 	@ $jin2_grab
-	tasks() { return this.atom( () => {
+	tasks() { return $jin2_atom_list.prop( () => {
 		var completed = this.argument( 'completed' ).get()
 		if( !completed || !completed.length ) {
 			var tasks = this.tasksAll().get()
@@ -72,7 +72,7 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	} ) }
 
 	@ $jin2_grab
-	taskRows() { return this.atom(
+	taskRows() { return $jin2_atom_list.prop(
 		() => this.tasks().get().map( task => this.taskRow( task.id().get() ).get() ) ,
 		next => null
 	) }

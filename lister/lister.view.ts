@@ -32,7 +32,7 @@ class $mol_lister extends $mol.$mol_lister {
 	} ) }
 	
 	@ $jin2_grab
-	itemsVisible() { return this.atom( () => {
+	itemsVisible() { return $jin2_atom_list.prop( () => {
 		var items = this.items().get()
 		if( !items ) return []
 		
@@ -40,8 +40,8 @@ class $mol_lister extends $mol.$mol_lister {
 	} ) }
 	
 	@ $jin2_grab
-	child() { return this.atom( () => {
-		return [ this.fillerStart().get() ].concat( this.itemsVisible().get() ).concat( this.fillerEnd().get() )
+	child() { return this.prop( () => {
+		return [ this.fillerStart().get() , this.itemsVisible().get() , this.fillerEnd().get() ]
 	} ) }
 	
 	@ $jin2_grab
