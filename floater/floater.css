@@ -1,6 +1,7 @@
 [mol_floater] {
 	display: flex;
 	position: relative;
+	will-change: transform;
 }
 
 [mol_floater_floatingHor="true"] {
