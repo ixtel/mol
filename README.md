@@ -1,9 +1,18 @@
 # $mol(ecule)
+
+[![Join the chat at https://gitter.im/nin-jin/mol](https://badges.gitter.im/nin-jin/mol.svg)](https://gitter.im/nin-jin/mol?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 $mol - next gen stateful reactive micromodular ui framework. Very simple, but very powerful.
 
 ![$mol ui framework](mol.jpg)
 
 * [Quick start with PMS architecture](https://github.com/nin-jin/pms-stub)
+
+## Demo applications
+
+ * [$mol_app_demo](app/demo) - demonstrates all molecules ([online](http://nin-jin.github.io/mol/))
+ * [$mol_app_todo](app/todo) - TodoMVC ([online](http://nin-jin.github.io/todomvc/examples/mol/), [benchmark](https://github.com/nin-jin/todomvc/tree/master/benchmark))
+ * [$mol_app_calc](app/calc) - simple spreadsheet ([online](http://nin-jin.github.io/calc/))
 
 ## Basic molecules
 
@@ -29,9 +38,3 @@ $mol - next gen stateful reactive micromodular ui framework. Very simple, but ve
  * [$mol_floater](floater) - float block 
  * [$mol_panel](panel) - head-body-foot panel
  * [$mol_spoiler](spoiler) - expandable block
-
-## Demo applications
-
- * [$mol_app_demo](app/demo) - demonstrates all molecules ([online](http://nin-jin.github.io/mol/))
- * [$mol_app_todo](app/todo) - TodoMVC ([online](http://nin-jin.github.io/todomvc/examples/mol/), [benchmark](https://github.com/nin-jin/todomvc/tree/master/benchmark))
- * [$mol_app_calc](app/calc) - simple spreadsheet ([online](http://nin-jin.github.io/calc/))
