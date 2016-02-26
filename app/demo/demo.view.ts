@@ -14,24 +14,19 @@ class $mol_app_demo extends $mol.$mol_app_demo {
 		} )
 	}
 	
+	screenEpanded() { return this.argument('expanded') }
+	
 	@ $jin2_grab
-	screen( id : string ) { return (new $mol_app_demo_screen).setup( _ => {
+	screen( id : string ) { return (new $mol.$mol_app_demo_screen).setup( _ => {
 		_.title = () => this.prop( id )
 		_.content = () => this.widget( id )
+		_.expanded = () => this.prop(
+			() => this.screenEpanded().get() == id ,
+			next => { this.screenEpanded().set( next ? id : null ) }
+		)
 	} ) }
 	
 	@ $jin2_grab
 	widget( id : string ) { return new $mol[ id ] }
-	
-}
-
-@ $mol_replace
-class $mol_app_demo_screen extends $mol.$mol_app_demo_screen {
-	
-	@ $jin2_grab
-	expanded() {
-		var state = this.persist<boolean>( 'expanded' )
-		return this.prop( () => !!state.get() , next => state.set( next ) )
-	}
 	
 }
