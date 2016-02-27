@@ -85,4 +85,4 @@ class $mol_state_arg extends $jin2_atom<string> {
 	
 }
 
-window.addEventListener( 'hashchange' , () => $jin2_state_arg.href().update() )
+window.addEventListener( 'hashchange' , () => $mol_state_arg.href().update() )

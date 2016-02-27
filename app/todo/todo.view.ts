@@ -17,10 +17,10 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	@ $jin2_grab
 	tasks() { return $jin2_atom_list.prop( () => {
 		var completed = this.argument().item( 'completed' ).get()
-		if( !completed || !completed.length ) {
-			var tasks = this.tasksAll().get()
+		if( completed ) {
+			var tasks = this.groupsByCompleted().get()[ completed ] || []
 		} else {
-			var tasks = this.groupsByCompleted().get()[ completed[0] ] || []
+			var tasks = this.tasksAll().get()
 		}
 		
 		var query = this.searchQuery().get() 
