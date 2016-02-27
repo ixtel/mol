@@ -16,7 +16,7 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 
 	@ $jin2_grab
 	tasks() { return $jin2_atom_list.prop( () => {
-		var completed = this.argument( 'completed' ).get()
+		var completed = this.argument().item( 'completed' ).get()
 		if( !completed || !completed.length ) {
 			var tasks = this.tasksAll().get()
 		} else {
@@ -117,9 +117,9 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	footerVisible() { return this.prop( () => this.tasksAll().get().length > 0 ) }
 	actionerVisible() { return this.prop( () => this.completedCount().get() > 0 ) }
 	
-	linkAll() { return $jin2_state_arg.link({ completed : null }) }
-	linkActive() { return $jin2_state_arg.link({ completed : false }) }
-	linkCompleted() { return $jin2_state_arg.link({ completed : true }) }
+	linkAll() { return this.argument().link({ completed : null }) }
+	linkActive() { return this.argument().link({ completed : false }) }
+	linkCompleted() { return this.argument().link({ completed : true }) }
 	
 }
 
