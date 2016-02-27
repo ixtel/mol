@@ -79,6 +79,7 @@ class $mol_state_arg extends $jin2_atom<string> {
             if( null == params[key] ) continue
             chunks.push( [ key ].concat( params[key] ).map( encodeURIComponent ).join( '=' ) )
         }
+		chunks.sort()
 
         return '#!' + chunks.join( '/' )
     }
