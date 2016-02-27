@@ -11,30 +11,30 @@ $mol - next gen stateful reactive micromodular ui framework. Very simple, but ve
 ## Demo applications
 
  * [$mol_app_demo](app/demo) - demonstrates all molecules ([online](http://nin-jin.github.io/mol/))
- * [$mol_app_todo](app/todo) - TodoMVC ([online](http://nin-jin.github.io/todomvc/examples/mol/), [benchmark](https://github.com/nin-jin/todomvc/tree/master/benchmark))
- * [$mol_app_calc](app/calc) - simple spreadsheet ([online](http://nin-jin.github.io/calc/))
+ * [$mol_app_todo](app/todo) - TodoMVC ([online](http://nin-jin.github.io/mol/#!screen=mol_app_todo), [benchmark](https://github.com/nin-jin/todomvc/tree/master/benchmark))
+ * [$mol_app_calc](app/calc) - simple spreadsheet ([online](http://nin-jin.github.io/mol/#!screen=mol_app_calc))
 
 ## Basic molecules
 
  * [$mol_model](model) - abstract reactive model
  * [$mol_view](view) - abstract reactive view model 
- * [$mol_filler](filler) - lorem ipsum
+ * [$mol_filler](filler) - lorem ipsum ([online](http://nin-jin.github.io/mol/#!screen=mol_filler))
 
-## Simple controls
+## Simple controls ([online](http://nin-jin.github.io/mol/#!screen=mol_controls_demo))
 
- * [$mol_linker](linker) - hyperlink
- * [$mol_clicker](clicker) - button
- * [$mol_checker](checker) - checkbox
- * [$mol_switcher](switcher) - radio button
- * [$mol_stringer](stringer) - one string input
- * [$mol_number](number) - number input
+ * [$mol_linker](linker) - hyperlink ([online](http://nin-jin.github.io/mol/#!screen=mol_linker_demo))
+ * [$mol_clicker](clicker) - button ([online](http://nin-jin.github.io/mol/#!screen=mol_clicker_demo))
+ * [$mol_checker](checker) - checkbox ([online](http://nin-jin.github.io/mol/#!screen=mol_checker_demo))
+ * [$mol_switcher](switcher) - radio button ([online](http://nin-jin.github.io/mol/#!screen=mol_switcher_demo))
+ * [$mol_stringer](stringer) - one string input ([online](http://nin-jin.github.io/mol/#!screen=mol_stringer_demo))
+ * [$mol_number](number) - number input ([online](http://nin-jin.github.io/mol/#!screen=mol_number_demo))
 
 ## Layout molecules
 
- * [$mol_scroller](scroller) - scrolling panel
- * [$mol_rower](rower) - multiple columns 
- * [$mol_lister](lister) - list of rows with lazy rendering 
- * [$mol_tabler](tabler) - grid with lazy rendering 
- * [$mol_floater](floater) - float block 
- * [$mol_panel](panel) - head-body-foot panel
- * [$mol_spoiler](spoiler) - expandable block
+ * [$mol_scroller](scroller) - scrolling panel ([online](http://nin-jin.github.io/mol/#!screen=mol_scroller_demo))
+ * [$mol_rower](rower) - multiple columns ([online](http://nin-jin.github.io/mol/#!screen=mol_scroller_demo))
+ * [$mol_lister](lister) - list of rows with lazy rendering ([online](http://nin-jin.github.io/mol/#!screen=mol_tabler_demo))
+ * [$mol_tabler](tabler) - grid with lazy rendering ([online](http://nin-jin.github.io/mol/#!screen=mol_tabler_demo))
+ * [$mol_floater](floater) - float block ([online](http://nin-jin.github.io/mol/#!screen=mol_tabler_demo))
+ * [$mol_panel](panel) - head-body-foot panel ([online](http://nin-jin.github.io/mol/#!screen=mol_panel_demo))
+ * [$mol_spoiler](spoiler) - expandable block ([online](http://nin-jin.github.io/mol/#!screen=mol_spoiler_demo))
