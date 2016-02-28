@@ -37,7 +37,7 @@ class $mol_app_demo extends $mol.$mol_app_demo {
 	
 	@ $jin2_grab
 	graph( id : string ) { return (new $mol.$mol_app_demo_graph).setup( _ => {
-		_.child = () => this.prop( () => {
+		_.child = () => this.atom( () => {
 			var nodes = new Set
 			var edges = new Set
 			

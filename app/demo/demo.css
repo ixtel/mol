@@ -28,6 +28,7 @@
 
 [mol_app_demo_single="true"] {
 	flex-wrap: nowrap;
+	padding: 40px;
 }
 
 [mol_app_demo_screen] {
@@ -44,7 +45,8 @@
 
 [mol_app_demo_single="true"] > [mol_app_demo_screen] {
 	flex: 1;
-	height: auto;
+	height: 100%;
+	margin: 0;
 }
 
 [mol_app_demo_screen]:hover {
@@ -77,7 +79,7 @@
 	flex: 1;
 	background: snow;
 	outline: 1px solid steelblue;
-	margin: 20px;
+	margin-left: 40px;
 }
 
 [mol_app_demo_node] {
@@ -86,4 +88,8 @@
 
 [mol_app_demo_edge] {
 	stroke : steelblue;
+}
+
+[mol_app_demo_edge]:hover {
+	stroke-width: 2px;
 }
