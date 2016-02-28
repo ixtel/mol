@@ -26,6 +26,10 @@
 	overflow: auto;
 }
 
+[mol_app_demo_single="true"] {
+	flex-wrap: nowrap;
+}
+
 [mol_app_demo_screen] {
 	width: 560px;
 	height: 360px;
@@ -34,6 +38,13 @@
 	background: #ccc;
 	z-index: 0;
 	outline: 1px solid steelblue;
+	display: flex;
+	flex-direction: column;
+}
+
+[mol_app_demo_single="true"] > [mol_app_demo_screen] {
+	flex: 1;
+	height: auto;
 }
 
 [mol_app_demo_screen]:hover {
@@ -62,19 +73,17 @@
 	flex-wrap: wrap;
 }
 
-[mol_app_demo_screen_expanded="true"] {
-	z-index: 1;
-	position: fixed;
-	left: 20px;
-	right: 20px;
-	top: 20px;
-	bottom: 20px;
-	width: auto;
-	height: auto;
-	box-shadow: 0 0 100px;
+[mol_app_demo_graph] {
+	flex: 1;
+	background: snow;
+	outline: 1px solid steelblue;
+	margin: 20px;
 }
 
-[mol_app_demo_screen_expanded="true"] [mol_app_demo_screen_titler] {
-	margin-top: -2.25em;
-	box-shadow: 0 0 20px;
+[mol_app_demo_node] {
+	font-size: .75rem;
+}
+
+[mol_app_demo_edge] {
+	stroke : steelblue;
 }

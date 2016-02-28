@@ -1,10 +1,16 @@
 $mol_app_demo : $mol_scroller
+	attr_mol_app_demo_single < single : false
+	child < screens : null
 
-$mol_app_demo_screen : $mol_view
-	attr_mol_app_demo_screen_expanded < expanded : false
-	child
-		< titler : $mol_checker
-			child < title : =
-			checked < expanded : false
-		< contenter : $mol_scroller
-			child < content : null
+$mol_app_demo_screen : $mol_view child
+	< titler : $mol_checker
+		child < title : =
+		checked < expanded : false
+	< contenter : $mol_scroller
+		child < content : null
+
+$mol_app_demo_graph : $mol_svg
+
+$mol_app_demo_node : $mol_svg_text
+
+$mol_app_demo_edge : $mol_svg_line

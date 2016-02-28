@@ -2,10 +2,10 @@
 class $mol_app_demo extends $mol.$mol_app_demo {
 	
 	@ $jin2_grab
-	child() {
+	screens() {
 		return this.atom( () => {
 			var id = this.screenEpanded().get()
-			if( id ) return [ this.screen( id ).get() ]
+			if( id ) return [ this.screen( id ).get() , this.graph( id ).get() ]
 			
 			var screens = []
 			for( var id in $mol ) {
@@ -18,6 +18,7 @@ class $mol_app_demo extends $mol.$mol_app_demo {
 	}
 	
 	screenEpanded() { return this.argument().item('screen') }
+	single() { return this.prop( () => !!this.screenEpanded().get() ) }
 	
 	@ $jin2_grab
 	screen( id : string ) { return (new $mol.$mol_app_demo_screen).setup( _ => {
@@ -33,5 +34,58 @@ class $mol_app_demo extends $mol.$mol_app_demo {
 	widget( id : string ) { return (new $mol[ '$' + id ]).setup( _ => {
 		_.argument = () => this.argument().item( id )
 	}) }
+	
+	@ $jin2_grab
+	graph( id : string ) { return (new $mol.$mol_app_demo_graph).setup( _ => {
+		_.child = () => this.prop( () => {
+			var nodes = new Set
+			var edges = new Set
+			
+			var stack = [ this.widget( id ).get().version() ]
+			var y = 1
+			while( stack.length ) {
+				var current = stack.shift()
+				var node = this.graphNode( $jin2_object_path( current ) ).get()
+				if( nodes.has( node ) ) continue
+				current.get()
+				let pos = [ ( 12 - current.mastersDeep ) / 32 , y++ / 64 ]
+				node.position = () => this.prop( pos )
+				nodes.add( node )
+				if( current.masters ) current.masters.forEach( ( _ , master ) => {
+					stack.push( master )
+					edges.add( this.graphEdge([ $jin2_object_path( master ) , $jin2_object_path( current ) ]).get() )
+				} )
+				stack.sort( ( a , b ) => ( a.mastersDeep - b.mastersDeep ) ) 
+				/*for( var field in current ) {
+					var having = current[ field ]
+					if( !having ) continue
+					if( having.objectOwner !== current ) continue
+					stack.push( having )
+					edges.add( this.graphEdge([ current.objectPath , having.objectPath ]).get() )
+				}*/
+			}
+			
+			var next = []
+			edges.forEach( edge => next.push( edge ) )
+			nodes.forEach( node => next.push( node ) )
+			
+			return next
+		} )
+	} ) }
+	
+	@ $jin2_grab
+	graphNodePosition( id : string ) { return this.atom([ Math.random() * .8 , Math.random() ]) }
+	
+	@ $jin2_grab
+	graphNode( id : string ) { return (new $mol.$mol_app_demo_node).setup( _ => {
+		_.value = () => this.prop( id )
+		//_.position = () => this.graphNodePosition( id )
+	} ) }
+	
+	@ $jin2_grab
+	graphEdge( ids : string[] ) { return (new $mol.$mol_app_demo_edge).setup( _ => {
+		_.start = () => this.graphNode( ids[0] ).position()
+		_.end = () => this.graphNode( ids[1] ).position()
+	} ) }
 	
 }

@@ -1,0 +1,12 @@
+$mol_svg_line : $mol_svg
+	tagName : =line
+	start : list
+		0
+		0
+	end : list
+		0
+		0
+	attr_x1 < startX : =50%
+	attr_y1 < startY : =50%
+	attr_x2 < endX : =50%
+	attr_y2 < endY : =50%

@@ -1,0 +1,8 @@
+$mol_svg_text : $mol_svg
+	tagName : =text
+	position : list
+		0
+		0
+	attr_x < offsetLeft : =50%
+	attr_y < offsetTop : =50%
+	child < value : =
