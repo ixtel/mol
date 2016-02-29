@@ -6,6 +6,7 @@ $mol - next gen stateful reactive micromodular ui framework. Very simple, but ve
 
 ![$mol ui framework](mol.jpg)
 
+* [Current generation framework review (rusian article)](https://habrahabr.ru/post/276747/)
 * [Quick start with PMS architecture](https://github.com/nin-jin/pms-stub)
 
 ## Demo applications
