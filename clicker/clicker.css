@@ -1,7 +1,7 @@
 [mol_clicker] {
 	cursor: pointer;
 	user-select: none;
-	outline: 1px solid rgba( 0 , 0 , 0 , .1 );
+	outline: 1px solid #ccc;
 	flex: 0.001 0.001 auto;
 	justify-content: center;
 	align-content: center;
@@ -11,10 +11,13 @@
 	margin: 0 1px 1px 0;
 	display: flex;
 	background: rgba( 255 , 255 , 255 , .2 );
-	flex: 1 1 auto;
+	text-decoration: inherit;
+	color: inherit;
 }
 [mol_clicker]:hover {
-	outline-color: rgba( 0 , 0 , 0 , .2 );
+	outline-color: #aaa;
+	position: relative;
+	z-index: 1;
 	/*background: rgba( 255 , 255 , 255 , .3 );*/
 }
 

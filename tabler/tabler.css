@@ -12,16 +12,23 @@
 }
 
 [mol_tabler_lister] > * {
-	display: table-row !important;
+	display: table-row;
     background: inherit;
 }
 
 [mol_tabler_lister] > * > * {
     white-space: nowrap;
-	display: table-cell !important;
+	display: table-cell;
     background: rgba(255,255,255,1);
 }
 
 [mol_tabler_lister] > *:nth-child(odd) > * {
     background: rgba(255,255,255,.95);
+}
+
+[mol_tabler_header] {
+	text-align: center;
+	vertical-align: middle;
+	padding: .5rem;
+	outline: 1px solid #ccc;
 }

@@ -9,7 +9,7 @@ class $mol_lister extends $mol.$mol_lister {
 	} ) }
 	
 	@ $jin2_grab
-	limitStart() { return this.atom( () => {
+	limitStart() { return this.prop( () => {
 		return 0
 		// var offset = 0
 		
@@ -37,11 +37,6 @@ class $mol_lister extends $mol.$mol_lister {
 		if( !items ) return []
 		
 		return items.slice( this.limitStart().get() , this.limitEnd().get() )
-	} ) }
-	
-	@ $jin2_grab
-	child() { return this.prop( () => {
-		return [ this.fillerStart().get() , this.itemsVisible().get() , this.fillerEnd().get() ]
 	} ) }
 	
 	@ $jin2_grab

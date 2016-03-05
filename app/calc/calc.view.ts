@@ -35,8 +35,8 @@ class $mol_app_calc extends $mol.$mol_app_calc {
 	} ) }
 
 	@ $jin2_grab
-	header( id : string ) { return ( new $mol.$mol_app_calc_header ).setup( _ => {
-		_.title = () => this.prop( id || '#' )
+	header( id : string ) { return ( new $mol.$mol_tabler_header ).setup( _ => {
+		_.child = () => this.prop( id || '#' )
 		_.floatVert = () => this.prop( !id || /^[A-Z]/.test( id ) )
 		_.floatHor = () => this.prop( !id || /[0-9]$/.test( id ) )
 	} ) }

@@ -36,7 +36,7 @@
 	height: 360px;
 	position: relative;
 	margin: 20px;
-	background: #ccc;
+	background: #ddd;
 	z-index: 0;
 	outline: 1px solid steelblue;
 	display: flex;
@@ -50,18 +50,17 @@
 }
 
 [mol_app_demo_screen]:hover {
-	animation: mol_app_demo_theming 30s infinite;
+	/*animation: mol_app_demo_theming 30s infinite;*/
 }
 
 [mol_app_demo_screen_titler] {
 	background: inherit;
 	color: black;
-	padding: .25em .5em;
-	font-size: .8em;
-	font-weight: bold;
-	margin: -1.75em 0 0 0;
-	outline: 1px solid steelblue;
-	position: absolute;
+	padding: .15rem;
+	font-size: .8rem;
+	margin: -1.25rem 0 0 0;
+	background: steelblue;
+	color: snow;
 }
 
 [mol_app_demo_screen_contenter] {

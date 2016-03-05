@@ -16,15 +16,18 @@ $mol_app_todo : $mol_scroller child
 				< pendinger : $mol_view child < pendingMessage
 					< pendingCounter : $mol_view child < pendingCount : 0
 					< pendingTail : = items left
-				< filter : $mol_view child < filterOptions
-					< filterAll : $mol_linker
-						link < linkAll : =#
+				< filter : $mol_rower child < filterOptions
+					< filterAll : $mol_switcher
+						selected < argCompleted : =
+						value : null
 						child : =All
-					< filterActive : $mol_linker
-						link < linkActive : =#
+					< filterActive : $mol_switcher
+						selected < argCompleted : =
+						value : =false
 						child : =Active
-					< filterCompleted : $mol_linker
-						link < linkCompleted : =#
+					< filterCompleted : $mol_switcher
+						selected < argCompleted : =
+						value : =true
 						child : =Completed
 				< actioner : $mol_app_todo_ghost
 					visible < actionerVisible : true

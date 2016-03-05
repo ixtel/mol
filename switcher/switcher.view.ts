@@ -10,4 +10,10 @@ class $mol_switcher extends $mol.$mol_switcher {
 		}
 	) }
 	
+	@ $jin2_grab
+	link() { return this.prop( () => {
+		var prop = this.selected()
+		return prop['link'] && prop['link']( this.value().get() ).get() || null
+	} ) }
+	
 }

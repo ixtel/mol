@@ -1,3 +1,5 @@
 $mol_switcher : $mol_checker
+	tagName : =a
+	attr_href < link : =
 	value : =
 	selected : =

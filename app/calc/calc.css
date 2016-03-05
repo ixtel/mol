@@ -2,13 +2,6 @@
 	margin: 0;
 }
 
-[mol_app_calc_header] {
-	text-align: center;
-	vertical-align: middle;
-	padding: .5em;
-	outline: 1px solid rgba(0,0,0,.2);
-}
-
 [mol_app_calc_cell] {
 	min-width: 3em;
 }

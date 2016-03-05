@@ -8,13 +8,8 @@ class $mol_state_arg extends $jin2_atom<string> {
     }
 	
     @ $jin2_grab
-	link( params : { [ index : string ] : any } ) {
-		var prefix = this.key().get()
-		var overrides = {}
-		for( var key in params ) {
-			overrides[ prefix ? ( prefix + '.' + key ) : key ] = params[ key ]
-		}
-		return new $jin2_prop( () => $mol_state_arg.make( overrides ) )
+	link( next : string ) {
+		return new $jin2_prop( () => $mol_state_arg.make({ [ this.key().get() ] : next }) )
 	}
 
 	pull_() {
@@ -81,7 +76,7 @@ class $mol_state_arg extends $jin2_atom<string> {
         }
 		chunks.sort()
 
-        return '#!' + chunks.join( '/' )
+        return '#' + chunks.join( '#' )
     }
 	
 }

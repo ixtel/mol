@@ -1,6 +1,11 @@
-$mol_stringer_demo : $mol_rower child
-	< one : $mol_stringer
-		hint : =Greeting
-	< two : $mol_stringer
-		hint : =Greeting
-		value : =Hello, World!
+$mol_stringer_demo : $mol_view child
+	< inputer : $mol_rower child < inputs
+		< one : $mol_stringer
+			hint : =Greeting
+			value < oneValue : =
+		< two : $mol_stringer
+			hint : =Greeting
+			value < twoValue : =Hello, World!
+	< outputer : $mol_rower child < outputs
+		< oneValue
+		< twoValue

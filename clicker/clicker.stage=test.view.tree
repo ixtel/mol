@@ -1,10 +1,10 @@
 $mol_clicker_demo : $mol_rower child
-	< one : $mol_clicker
+	< major : $mol_clicker
 		child : =Click me!
 		type : =major
-	< two : $mol_clicker
+	< minor : $mol_clicker
 		child : =Or click me..
 		type : =minor
-	< three : $mol_clicker
+	< warn : $mol_clicker
 		child : =Be attentive!
 		type : =warn

@@ -1,8 +1,0 @@
-$mol_linker_demo : $mol_rower child
-	< one : $mol_linker
-		child : =You are here
-		link : =#one
-		current : true
-	< two : $mol_linker
-		child : =Follow me!
-		link : =#two

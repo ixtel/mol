@@ -3,9 +3,10 @@ $mol_app_demo : $mol_scroller
 	child < screens : null
 
 $mol_app_demo_screen : $mol_view child
-	< titler : $mol_checker
+	< titler : $mol_switcher
 		child < title : =
-		checked < expanded : false
+		selected < screenSelected : =
+		value < name : =
 	< contenter : $mol_scroller
 		child < content : null
 

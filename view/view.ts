@@ -104,10 +104,11 @@ class $mol_view extends $mol_model {
 			
 			/// Update dynamic attributes
 			Object.getPrototypeOf( this ).attrNames().forEach( name => {
-				var p = prev.getAttribute( name )
-				var n = String( this[ 'attr_' + name ]().get() )
-				if( p !== n ) {
-					prev.setAttribute( name , n )
+				var n = this[ 'attr_' + name ]().get()
+				if( n == null ) {
+					prev.removeAttribute( name )
+				} else {
+					prev.setAttribute( name , String( n ) )
 				}
 			} )
 

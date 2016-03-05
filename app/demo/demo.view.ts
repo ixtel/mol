@@ -4,7 +4,7 @@ class $mol_app_demo extends $mol.$mol_app_demo {
 	@ $jin2_grab
 	screens() {
 		return this.atom( () => {
-			var id = this.screenEpanded().get()
+			var id = this.screenSelected().get()
 			if( id ) return [ this.screen( id ).get() , this.graph( id ).get() ]
 			
 			var screens = []
@@ -17,17 +17,15 @@ class $mol_app_demo extends $mol.$mol_app_demo {
 		} )
 	}
 	
-	screenEpanded() { return this.argument().item('screen') }
-	single() { return this.prop( () => !!this.screenEpanded().get() ) }
+	screenSelected() { return this.argument().item('screen') }
+	single() { return this.prop( () => !!this.screenSelected().get() ) }
 	
 	@ $jin2_grab
 	screen( id : string ) { return (new $mol.$mol_app_demo_screen).setup( _ => {
 		_.title = () => this.prop( '$' + id )
 		_.content = () => this.widget( id )
-		_.expanded = () => this.prop(
-			() => this.screenEpanded().get() == id ,
-			next => { this.screenEpanded().set( next ? id : null ) }
-		)
+		_.screenSelected = () => this.screenSelected()
+		_.name = () => this.prop( id )
 	} ) }
 	
 	@ $jin2_grab
@@ -43,7 +41,7 @@ class $mol_app_demo extends $mol.$mol_app_demo {
 			
 			var stack = [ this.widget( id ).get().version() ]
 			var y = 1
-			while( stack.length ) {
+			while( stack.length && ( y < 200 ) )  {
 				var current = stack.shift()
 				var node = this.graphNode( $jin2_object_path( current ) ).get()
 				if( nodes.has( node ) ) continue
