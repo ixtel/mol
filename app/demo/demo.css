@@ -10,6 +10,22 @@
 [mol_app_demo] {
 	width: 100%;
 	height: 100%;
+	display: flex;
+}
+
+[mol_app_demo_selector] {
+	flex: 0 1 auto;
+	background: gainsboro;;
+}
+
+[mol_app_demo_tab] {
+	justify-content: flex-start;
+	font-size: .85rem;
+}
+
+[mol_app_demo_contenter] {
+	flex: 1;
+	height: 100%;
 	background-color: steelblue;
 	background-image: linear-gradient(white 2px, transparent 2px),
 		linear-gradient(90deg, white 2px, transparent 2px),
@@ -23,27 +39,26 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-content: flex-start;
-	overflow: auto;
 }
 
-[mol_app_demo_single="true"] {
+[mol_app_demo_single="true"] [mol_app_demo_contenter] {
 	flex-wrap: nowrap;
 	padding: 40px;
 }
 
 [mol_app_demo_screen] {
-	width: 560px;
-	height: 360px;
+	width: 760px;
+	height: 460px;
 	position: relative;
 	margin: 20px;
-	background: #ddd;
+	background: gainsboro;;
 	z-index: 0;
 	outline: 1px solid steelblue;
 	display: flex;
 	flex-direction: column;
 }
 
-[mol_app_demo_single="true"] > [mol_app_demo_screen] {
+[mol_app_demo_single="true"] [mol_app_demo_screen] {
 	flex: 1;
 	height: 100%;
 	margin: 0;
@@ -76,9 +91,8 @@
 
 [mol_app_demo_graph] {
 	flex: 1;
-	background: snow;
+	background: gainsboro;
 	outline: 1px solid steelblue;
-	margin-left: 40px;
 }
 
 [mol_app_demo_node] {

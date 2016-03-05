@@ -2,10 +2,33 @@
 class $mol_app_demo extends $mol.$mol_app_demo {
 	
 	@ $jin2_grab
+	tabs() {
+		return this.atom( () => {
+			var tabs = []
+			for( var id in $mol ) {
+				if( id === '$mol_app_demo' ) continue
+				if( !/_demo$/.test( id ) ) continue
+				tabs.push( this.tab( id.replace( /^\$/ , '' ) ).get() )
+			}
+			return tabs
+		} )
+	}
+	
+	@ $jin2_grab
+	child() {
+		return this.atom<$mol_view[]>( () => {
+			var id = this.screenSelected().get()
+			if( id ) return [ this.selector().get() , this.contenter().get() , this.graph( id ).get() ]
+			
+			return [ this.selector().get() , this.contenter().get() ]
+		} )
+	}
+	
+	@ $jin2_grab
 	screens() {
 		return this.atom( () => {
 			var id = this.screenSelected().get()
-			if( id ) return [ this.screen( id ).get() , this.graph( id ).get() ]
+			if( id ) return [ this.screen( id ).get() ]
 			
 			var screens = []
 			for( var id in $mol ) {
@@ -19,6 +42,13 @@ class $mol_app_demo extends $mol.$mol_app_demo {
 	
 	screenSelected() { return this.argument().item('screen') }
 	single() { return this.prop( () => !!this.screenSelected().get() ) }
+	
+	@ $jin2_grab
+	tab( id : string ) { return (new $mol_switcher).setup( _ => {
+		_.selected = () => this.screenSelected()
+		_.value = () => this.prop( id )
+		_.child = () => this.prop( '$' + id )
+	}) }
 	
 	@ $jin2_grab
 	screen( id : string ) { return (new $mol.$mol_app_demo_screen).setup( _ => {

@@ -1,6 +1,7 @@
-$mol_app_demo : $mol_scroller
+$mol_app_demo : $mol_view
 	attr_mol_app_demo_single < single : false
-	child < screens : null
+	selector : $mol_scroller child < tabs : null
+	contenter : $mol_scroller child < screens : null
 
 $mol_app_demo_screen : $mol_view child
 	< titler : $mol_switcher
