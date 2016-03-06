@@ -76,11 +76,11 @@ class $mol_app_demo extends $mol.$mol_app_demo {
 			
 			var stack = [ this.widget( id ).get().version() ]
 			var y = 1
-			while( stack.length && ( y < 200 ) )  {
+			while( stack.length && y < 100 )  {
 				var current = stack.shift()
 				var node = this.graphNode( $jin2_object_path( current ) ).get()
 				if( nodes.has( node ) ) continue
-				current.get()
+				//current.get()
 				let pos = [ ( 12 - current.mastersDeep ) / 32 , y++ / 64 ]
 				node.position = () => this.prop( pos )
 				nodes.add( node )
