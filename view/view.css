@@ -1,4 +1,4 @@
-[mol_view_error="fail"] {
+[mol_view_error] {
 	background-image: repeating-linear-gradient(
 		45deg,
 		rgba(255,220,220,1),
@@ -28,7 +28,7 @@
 	animation: mol_view_show .25s ease-in;
 }
 
-[mol_view_error="wait"] {
+[mol_view_error="Wait..."] {
 	background-image: repeating-linear-gradient(
 		45deg,
 		rgba(0,0,255,.05),

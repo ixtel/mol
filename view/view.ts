@@ -180,11 +180,7 @@ class $mol_view extends $mol_model {
 		})
 		prop['fail_'] = ( error ) => {
 			var node = this.node().get()
-			if( error === $jin2_atom.wait ) {
-				node.setAttribute( 'mol_view_error' , 'wait' )
-			} else {
-				node.setAttribute( 'mol_view_error' , 'fail' )
-			}
+			node.setAttribute( 'mol_view_error' , error.message )
 			return node
 		} 
 		return prop

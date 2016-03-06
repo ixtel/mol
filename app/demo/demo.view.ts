@@ -59,9 +59,14 @@ class $mol_app_demo extends $mol.$mol_app_demo {
 	} ) }
 	
 	@ $jin2_grab
-	widget( id : string ) { return (new $mol[ '$' + id ]).setup( _ => {
-		_.argument = () => this.argument().item( id )
-	}) }
+	widget( id : string ) {
+		if( typeof $mol[ '$' + id ] !== 'function' ) {
+			throw new Error( 'Molecula not found ($mol.$' + id + ')' )
+		}
+		return (new $mol[ '$' + id ]).setup( _ => {
+			_.argument = () => this.argument().item( id )
+		})
+	}
 	
 	@ $jin2_grab
 	graph( id : string ) { return (new $mol.$mol_app_demo_graph).setup( _ => {
