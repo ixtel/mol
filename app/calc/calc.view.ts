@@ -2,10 +2,14 @@
 class $mol_app_calc extends $mol.$mol_app_calc {
 
 	@ $jin2_grab
-	rows() { return this.atom( () => {
-		var rows = []
-		//var limit = this.lister().get()['rowLimit']().get()
-		for( var i = 0 ; i < 1001 ; ++i ) {
+	rowsCount() { return this.atom( 1000 ) }
+
+	@ $jin2_grab
+	rowsVisible() { return this.atom( () => {
+		var rows = [ this.row( 0 ).get() ]
+		var start = this.lister().limitStart().get()
+		var end = this.lister().limitEnd().get()
+		for( var i = start ; i < end ; ++i ) {
 			rows.push( this.row( i ).get() )
 		}
 		return rows

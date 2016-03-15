@@ -1,4 +1,6 @@
-$mol_tabler : $mol_scroller child < lister : $mol_lister items < rows : null
+$mol_tabler : $mol_scroller child < lister : $mol_lister
+	itemsVisible < rowsVisible < rows : null
+	itemsCount < rowsCount : null
 
 $mol_tabler_header : $mol_floater
 

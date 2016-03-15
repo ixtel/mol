@@ -32,6 +32,9 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 	} ) }
 	
 	@ $jin2_grab
+	tasksCount() { return this.prop( () => this.tasks().get().length ) }
+	
+	@ $jin2_grab
 	task( id ) { return (new $mol_app_todo_task).setup( _ => {
 		_.id = () => this.prop( id )
 	} ) }
@@ -75,7 +78,15 @@ class $mol_app_todo extends $mol.$mol_app_todo {
 
 	@ $jin2_grab
 	taskRows() { return $jin2_atom_list.prop(
-		() => this.tasks().get().map( task => this.taskRow( task.id().get() ).get() ) ,
+		() => {
+			var tasks = this.tasks().get()
+			var limit = Math.min( tasks.length , this.bodier().limitEnd().get() )
+			var rows = []
+			for( var i = 0 ; i < limit ; ++ i ) {
+				rows.push( this.taskRow( tasks[i].id().get() ).get() )
+			}
+			return rows
+		},
 		next => null
 	) }
 

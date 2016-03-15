@@ -1,5 +1,8 @@
 $mol_lister : $mol_view
-	rowMinHeight : 40
+	rowMinHeight : 36
+	limitStart : 0
+	limitEnd : 0
+	itemsCount : 0
 	child < itemsVisible < items : null
 	field_style_paddingTop < fillerStartHeight : =0
 	field_style_paddingBottom < fillerEndHeight : =0

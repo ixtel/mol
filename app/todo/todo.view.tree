@@ -9,7 +9,8 @@ $mol_app_todo : $mol_scroller child
 				hint < taskNewHint : =What needs to be done?
 		< bodier : $mol_lister
 			rowMinHeight : 56
-			items < taskRows : null
+			itemsVisible < taskRows : null
+			itemsCount < tasksCount : 0
 		< footer : $mol_app_todo_ghost
 			visible < footerVisible : true
 			child < footerContent

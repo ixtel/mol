@@ -2,10 +2,14 @@
 class $mol_tabler_demo extends $mol.$mol_tabler_demo {
 	
 	@ $jin2_grab
-	rows() { return this.atom( () => {
+	rowsCount() { return this.prop( 200 ) }
+	
+	@ $jin2_grab
+	rowsVisible() { return this.atom( () => {
+		var limit = Math.min( this.rowsCount().get() , this.lister().limitEnd().get() )
 		var rows = []
 		rows.push( this.header().get() )
-		for( var i = 0 ; i < 200 ; ++i ) {
+		for( var i = 0 ; i < limit ; ++i ) {
 			rows.push( this.row( i ).get() )
 		}
 		return rows

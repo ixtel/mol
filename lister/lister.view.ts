@@ -45,10 +45,11 @@ class $mol_lister extends $mol.$mol_lister {
 	) }
 	
 	@ $jin2_grab
+	itemsCount() { return this.prop( () => this.items().get().length ) }
+	
+	@ $jin2_grab
 	fillerEndHeight() { return this.atom(
-		() => this.items().get()
-			? ( this.items().get().length - this.limitEnd().get() ) * this.rowMinHeight().get() + 'px'
-			: '0'
+		() => Math.max( 0 , ( this.itemsCount().get() - this.limitEnd().get() ) * this.rowMinHeight().get() ) + 'px'
 	) }
 	
 }
