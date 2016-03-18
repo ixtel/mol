@@ -171,7 +171,9 @@ class $mol_view extends $mol_model {
 				for( var i = 0 ; i < names.length - 1 ; ++i ) {
 					if( names[i] ) obj = obj[ names[i] ]
 				}
-				obj[ names[ names.length - 1 ] ] = this[ 'field_' + path ]().get()
+				var field = names[ names.length - 1 ]
+				var val = this[ 'field_' + path ]().get()
+				if( obj[ field ] !== val ) obj[ field ] = val
 			} )
 			
 			prev.removeAttribute( 'mol_view_error' )

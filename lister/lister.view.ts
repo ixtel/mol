@@ -40,7 +40,7 @@ class $mol_lister extends $mol.$mol_lister {
 	} ) }
 	
 	@ $jin2_grab
-	fillerStartHeight() { return this.atom(
+	fillerStartHeight() { return this.prop(
 		() => this.limitStart().get() * this.rowMinHeight().get() + 'px'
 	) }
 	
@@ -48,7 +48,7 @@ class $mol_lister extends $mol.$mol_lister {
 	itemsCount() { return this.prop( () => this.items().get().length ) }
 	
 	@ $jin2_grab
-	fillerEndHeight() { return this.atom(
+	fillerEndHeight() { return this.prop(
 		() => Math.max( 0 , ( this.itemsCount().get() - this.limitEnd().get() ) * this.rowMinHeight().get() ) + 'px'
 	) }
 	
