@@ -47,7 +47,6 @@ class $mol_app_calc extends $mol.$mol_app_calc {
 
 	@ $jin2_grab
 	cell( id : (string|number)[] ) { return ( new $mol.$mol_app_calc_cell ).setup( _ => {
-		_.hint = () => this.prop( '' )
 		_.result = () => this.result( id )
 		_.value = () => this.value( id )
 	} ) }
