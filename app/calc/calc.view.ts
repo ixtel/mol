@@ -22,7 +22,7 @@ class $mol_app_calc extends $mol.$mol_app_calc {
 			for( var i = 0 ; i < 16 ; ++i ) {
 				if( i > 0 ) {
 					if( id > 0 ) {
-						cells.push( this.cell( this.number2string( i - 1 ) + id ).get() )
+						cells.push( this.cell([ this.number2string( i - 1 ) , id ]).get() )
 					} else {
 						cells.push( this.header( this.number2string( i - 1 ) ).get() )
 					}
@@ -46,15 +46,15 @@ class $mol_app_calc extends $mol.$mol_app_calc {
 	} ) }
 
 	@ $jin2_grab
-	cell( id : string ) { return ( new $mol.$mol_app_calc_cell ).setup( _ => {
+	cell( id : (string|number)[] ) { return ( new $mol.$mol_app_calc_cell ).setup( _ => {
 		_.hint = () => this.prop( '' )
 		_.result = () => this.result( id )
 		_.value = () => this.value( id )
 	} ) }
 
 	@ $jin2_grab
-	value( id : string ) {
-		var state = this.persist<string>( 'value_' + id )
+	value( id : (string|number)[] ) {
+		var state = this.persist<string>( 'value_' + id.join('') )
 		return this.prop( () => state.get() , next => {
 			var numb = Number( next ) 
 			if( numb.toString() == next ) return state.set( numb )
@@ -63,16 +63,16 @@ class $mol_app_calc extends $mol.$mol_app_calc {
 	}
 	
 	@ $jin2_grab
-	func( id : string ) { return this.atom( () => {
+	func( id : (string|number)[] ) { return this.atom( () => {
 		var code = this.value( id ).get()
 			.replace( /^=/ , 'return ' )
 			.replace( /#/ , 'Math.' )
-			.replace( /\b([A-Z]+[0-9]+)\b/g , '_.result("$1").get()' )
+			.replace( /\b([A-Z]+)([0-9]+)\b/g , '_.result(["$1",$2]).get()' )
 		return new Function( '_' , code )
 	} ) }
 	
 	@ $jin2_grab
-	result( id : string ) { return this.atom( () => {
+	result( id : (string|number)[] ) { return this.atom( () => {
 		var val = this.value( id ).get() 
 		var res = ( val && ( val[0] === '=' ) ) ? this.func( id ).get()( this ) : val
 		return res
