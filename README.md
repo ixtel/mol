@@ -4,7 +4,7 @@
 
 $mol - next gen stateful reactive micromodular ui framework. Very simple, but very powerful.
 
-**[This project is deprecated by eigenmethod/mol](https://github.com/eigenmethod/mol)!**
+**[This repo is deprecated by eigenmethod/mol!](https://github.com/eigenmethod/mol)**
 
 ![$mol ui framework](mol.jpg)
 
