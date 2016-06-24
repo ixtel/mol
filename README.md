@@ -14,8 +14,9 @@ $mol - next gen stateful reactive micromodular ui framework. Very simple, but ve
 ## Demo applications
 
  * [$mol_app_demo](app/demo) - demonstrates all molecules ([online](http://nin-jin.github.io/mol/))
- * [$mol_app_todo](app/todo) - TodoMVC ([online](http://nin-jin.github.io/mol/#!screen=mol_app_todo), [benchmark](https://github.com/nin-jin/todomvc/tree/master/benchmark))
+ * [$mol_app_todo](app/todo) - TodoMVC ([online](http://nin-jin.github.io/mol/#!screen=mol_app_todo), [benchmark](https://github.com/nin-jin/todomvc/tree/master/benchmark), [video comparison](http://www.webpagetest.org/video/view.php?id=160515_4f193e07f4c37dc3b72dd3799dd27397551690a2))
  * [$mol_app_calc](app/calc) - simple spreadsheet ([online](http://nin-jin.github.io/calc/))
+ * $mol_chart_demo - analytic panel with charts ([online](http://nin-jin.github.io/chart/))
 
 ## Basic molecules
 
